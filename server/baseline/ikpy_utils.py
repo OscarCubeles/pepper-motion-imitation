@@ -18,6 +18,13 @@ import pose_mapping as pose_map
 settings.add_server_dir_to_path()
 
 
+def _resolve_workspace_calibration_path(json_path):
+    path = Path(json_path)
+    if not path.is_absolute():
+        path = Path(__file__).resolve().parent / path
+    return str(path)
+
+
 def load_metrabs_calibration(
     json_path="metrabs_workspace.json"
 ):
@@ -25,6 +32,7 @@ def load_metrabs_calibration(
     Returns calibration dictionary or None.
     """
 
+    json_path = _resolve_workspace_calibration_path(json_path)
     if not os.path.exists(json_path):
         return None
 
@@ -33,8 +41,9 @@ def load_metrabs_calibration(
 
 def load_pepper_chains(script_dir):
     """Load Pepper robot arm chains."""
-    left_arm = Chain.from_json_file(os.path.join(script_dir, "pepper_ik_resources", "pepper_left_arm.json"))
-    right_arm = Chain.from_json_file(os.path.join(script_dir, "pepper_ik_resources", "pepper_right_arm.json"))
+    resources_dir = os.path.join(script_dir, "..", "pepper_ik_resources")
+    left_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_left_arm.json"))
+    right_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_right_arm.json"))
 
     print("Pepper left arm joints:")
 
@@ -361,6 +370,8 @@ def update_metrabs_calibration(
     """
     Updates min/max wrist-thorax distances and stores them to disk.
     """
+
+    json_path = _resolve_workspace_calibration_path(json_path)
 
     try:
         with open(json_path, "r") as f:
