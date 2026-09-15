@@ -12,7 +12,7 @@ import queue as thread_queue
 import pose_mapping as pose_map
 import websocket_client as clientws
 from angle_calculator import AngleCalculator
-from angle_classifier_complete import AngleClassifier
+from angle_classifier_pepper import AngleClassifier
 from hand_detection.EMA_smoothing import EMASmoothing
 import hand_orientation as ho
 

@@ -7,7 +7,7 @@ _DATA = None
 
 def _csv_path():
     # CSV is located next to this module
-    return os.path.join(os.path.dirname(__file__), "Combinations Hand_final.csv")
+    return os.path.join(os.path.dirname(__file__), "arm_vectors_labels.csv")
 
 
 def _load_data():
