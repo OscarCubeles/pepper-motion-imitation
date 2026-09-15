@@ -41,8 +41,9 @@ def load_metrabs_calibration(
 
 def load_pepper_chains(script_dir):
     """Load Pepper robot arm chains."""
-    left_arm = Chain.from_json_file(os.path.join(script_dir, "pepper_ik_resources", "pepper_left_arm.json"))
-    right_arm = Chain.from_json_file(os.path.join(script_dir, "pepper_ik_resources", "pepper_right_arm.json"))
+    resources_dir = os.path.join(script_dir, "..", "pepper_ik_resources")
+    left_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_left_arm.json"))
+    right_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_right_arm.json"))
 
     print("Pepper left arm joints:")
 
