@@ -13,15 +13,8 @@ DL_POSE_DIR = CURRENT_FILE.parents[1]   # 01-server/dl-pose
 SERVER_DIR = CURRENT_FILE.parents[2]    # 01-server
 REPO_ROOT = CURRENT_FILE.parents[3]     # Pepper-Imitation-System
 
-for path in (DL_POSE_DIR, SERVER_DIR, REPO_ROOT):
-    path_str = str(path)
-    if path_str not in sys.path:
-        sys.path.insert(0, path_str)
-
-import settings  # noqa: E402
-settings.add_server_dir_to_path()
-
-import pose_mapping as pose_map  # noqa: E402
+from server.common import settings  # noqa: E402
+from server.common import pose_mapping as pose_map  # noqa: E402
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp"}
 ARM_SIDES = ("left", "right")

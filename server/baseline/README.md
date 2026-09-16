@@ -1,5 +1,12 @@
 # DL-Pose: MetrAbs Webcam 3D Pose Server
 
+> **Current package layout:** shared runtime code and assets now live under
+> `server/common`. The canonical entry points are
+> `python -m server.baseline.run_motion_imitation_server`,
+> `python -m server.proposed.run_motion_imitation_server`, and
+> `python -m server.ikpy.run_motion_imitation_server`. The remaining
+> material in this document describes the retained offline and legacy tools.
+
 ## Overview
 
 This directory contains the maintained webcam-based 3D human pose pipeline for the Exercise Motivation System.
@@ -471,7 +478,7 @@ pip install mediapipe
 The following directory must exist:
 
 ```text
-server/dl-pose/metrabs_eff2l_384px_800k_28ds_pytorch/
+server/common/models/metrabs_eff2l_384px_800k_28ds_pytorch/
 ```
 
 It must contain the model files expected by `metrabsInference.py`, including:
@@ -487,10 +494,10 @@ It must contain the model files expected by `metrabsInference.py`, including:
 The person detector inside `metrabs_pytorch/multiperson/person_detector.py` loads:
 
 ```python
-ultralytics.YOLO('yolov8m.pt')
+ultralytics.YOLO(str(settings.YOLO_MODEL_PATH))
 ```
 
-In the current repo layout, `yolov8m.pt` is stored at the repo root.
+In the current repo layout, `yolov8m.pt` is stored under `server/common/models`.
 
 Keep it available when launching the server from the workspace root.
 
@@ -499,7 +506,7 @@ Keep it available when launching the server from the workspace root.
 The MediaPipe variants expect:
 
 ```text
-server/hand_detection/hand_landmarker.task
+server/common/hand_detection/hand_landmarker.task
 ```
 
 ## Camera Calibration
@@ -528,28 +535,28 @@ Run from this directory or from the workspace root as appropriate.
 
 ```powershell
 conda activate media
-python server\dl-pose\Pose_3D_metrabs_server.py
+python server\common\Pose_3D_metrabs_server.py
 ```
 
 ### Body plus MediaPipe streaming server
 
 ```powershell
 conda activate media
-python server\dl-pose\Pose_3D_metrabs_server_mediapipe.py
+python server\common\Pose_3D_metrabs_server_mediapipe.py
 ```
 
 ### Local body-only visualization
 
 ```powershell
 conda activate media
-python server\dl-pose\Pose_3D_metrabs.py
+python server\common\Pose_3D_metrabs.py
 ```
 
 ### Local body plus MediaPipe visualization
 
 ```powershell
 conda activate media
-python server\dl-pose\Pose_3D_metrabs_mediapipe.py
+python server\common\Pose_3D_metrabs_mediapipe.py
 ```
 
 ## Shared Server Behavior
@@ -582,7 +589,7 @@ Cause:
 Fix:
 
 - close other camera apps
-- test the webcam with `python server\dl-pose\webcam.py`
+- test the webcam with `python server\common\webcam.py`
 - adjust `CAMERA_INDEX` in the relevant script if needed
 
 ### YOLO weight file not found
@@ -593,7 +600,7 @@ Cause:
 
 Fix:
 
-- make sure `yolov8m.pt` is available
+- make sure `server/common/models/yolov8m.pt` is available
 - prefer launching from the workspace root
 
 ### MediaPipe variant starts but no fingertip data is streamed
@@ -606,7 +613,7 @@ Cause:
 
 Fix:
 
-- verify `server/hand_detection/hand_landmarker.task` exists
+- verify `server/common/hand_detection/hand_landmarker.task` exists
 - improve lighting
 - keep hands visible and not too motion-blurred
 

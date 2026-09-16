@@ -2,19 +2,19 @@ import cv2
 import torch
 import time
 import sys
-import settings
+from server.common import settings
 import numpy as np
 import matplotlib.pyplot as plt
 
 from pathlib import Path
-from calibration_utils import load_metrabs_calibration
-from metrabs_pytorch.inference import metrabsInference
+from server.common.calibration_utils import load_metrabs_calibration
+from server.common.metrabs_pytorch.inference import metrabsInference
 from matplotlib.patches import Rectangle
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 settings.set_demonstration_client_dir()
 
-from visualization import PoseVisualizer
+from server.common.visualization import PoseVisualizer
 
 
 def plot_results(image, pred, joint_names, joint_edges):
@@ -46,7 +46,7 @@ def plot_results(image, pred, joint_names, joint_edges):
     plt.show()
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-model_dir = SCRIPT_DIR / "metrabs_eff2l_384px_800k_28ds_pytorch"
+model_dir = settings.METRABS_MODEL_DIR
 MeterabsInferenceModel = metrabsInference.metrabs_inference(str(model_dir))
 model = MeterabsInferenceModel.load_model()
 intrinsic_matrix, distortion_coeffs = load_metrabs_calibration()
@@ -58,7 +58,7 @@ joint_edges = model.per_skeleton_joint_edges[skeleton].cpu().numpy()
 visualizer = PoseVisualizer(source_name="dl-pose")
 
 with torch.inference_mode(), torch.device('cuda'):
-    image_filepath = SCRIPT_DIR / "calibration_images" / "demo-pose.jpg"
+    image_filepath = settings.CALIBRATION_DIR / "demo-pose.jpg"
     image = cv2.imread(str(image_filepath))
     image_pt = torch.from_numpy(image).permute(2, 0, 1).cuda()
     print(image_pt.shape, image_pt.device)

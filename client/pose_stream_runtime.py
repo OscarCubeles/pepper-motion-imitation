@@ -8,9 +8,19 @@ import struct
 import keyboard
 import websocket
 import numpy as np
-import pepper_config as settings
-import client_visualization as client_vis
 from threading import Event, Thread, Lock
+
+if __package__:
+    from . import pepper_config as settings
+    from . import client_visualization as client_vis
+else:
+    import pepper_config as settings
+    import client_visualization as client_vis
+
+if __package__:
+    from .server_angle_payload import build_server_joint_targets
+else:
+    from server_angle_payload import build_server_joint_targets
 
 try:
     from Queue import Empty, Full, Queue
@@ -349,10 +359,11 @@ def _decode_dispatch_loop():
         if message is None:
             break
         try:
-            # Try to parse as JSON (new format with hand orientation)
+            # JSON payloads may also contain server-computed Pepper angles.
             payload_bytes = None
             frame_meta = None
             hand_orientation = None
+            angles_data = None
             
             try:
                 json_data = json.loads(message)
@@ -360,6 +371,7 @@ def _decode_dispatch_loop():
                     # New JSON format with hand orientation labels
                     pose_base64 = json_data.get("pose_keypoints")
                     hand_orientation = json_data.get("hand_orientation", {})
+                    angles_data = json_data.get("angles")
                     decoded = base64.b64decode(pose_base64)
                     payload_bytes, frame_meta = _split_pose_payload(decoded)
                     _set_latest_hand_orientation(hand_orientation)
@@ -384,6 +396,7 @@ def _decode_dispatch_loop():
                 frame_id=frame_id,
                 capture_ts_client_us=capture_ts_client_us,
                 hand_orientation=hand_orientation,
+                angles=angles_data,
             )
         except Exception as exc:
             if not stop_event.is_set():
@@ -489,12 +502,27 @@ def _is_expected_disconnect_error(error):
     return False
 
 
-# Store and recieve joint 3D positions from the server
-def recieve_joints(jointMatrix, frame_num=0, frame_id=None, capture_ts_client_us=None, hand_orientation=None):
+# Store and receive joint 3D positions from the server.
+def recieve_joints(jointMatrix, frame_num=0, frame_id=None, capture_ts_client_us=None, hand_orientation=None, angles=None):
     # check if matrix is empty
     if not np.all(jointMatrix == 0.0):
         # Copy once because the decode buffers are reused across frames.
         jointMatrix = jointMatrix.copy()
+
+        # Proposed and IKPy servers provide angles. Baseline payloads omit them
+        # and continue through the existing pose-based IK path below.
+        used_server_angles = False
+        if ENABLE_ROBOT_IMITATION:
+            names, server_angles, speeds = build_server_joint_targets(angles)
+            if server_angles:
+                _set_latest_joint_targets(
+                    names,
+                    server_angles,
+                    speeds,
+                    frame_id=frame_id,
+                    capture_ts_client_us=capture_ts_client_us,
+                )
+                used_server_angles = True
         
         # Show hand orientation if received
         #if hand_orientation:
@@ -630,7 +658,7 @@ def recieve_joints(jointMatrix, frame_num=0, frame_id=None, capture_ts_client_us
             "left_server_palm_y": LServerPalmY,
             "left_server_palm_z": LServerPalmZ,
         })
-        if ENABLE_ROBOT_IMITATION:
+        if ENABLE_ROBOT_IMITATION and not used_server_angles:
             # Get discrete orientation labels if available
             hand_orientation_data = _get_latest_hand_orientation()
             right_discrete_orientation = None

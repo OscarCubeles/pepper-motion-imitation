@@ -2,7 +2,7 @@
 from __future__ import print_function
 import pepper_config as settings
 settings.set_client_dir()
-import pose_stream_runtime2 as pose_stream_runtime
+import pose_stream_runtime
 
 try:
     from naoqi import ALProxy

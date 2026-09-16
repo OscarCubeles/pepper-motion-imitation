@@ -16,8 +16,7 @@ from pathlib import Path
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "FALSE"
 
-import settings
-settings.add_server_dir_to_path()
+from server.common import settings
 
 
 # ==========================================
@@ -26,7 +25,7 @@ settings.add_server_dir_to_path()
 
 NUM_MEASUREMENTS = 100
 OUTPUT_CSV = "mediapipe_benchmark.csv"
-POSE_MODEL_PATH = "01-server/hand_detection/pose_landmarker_full.task"
+POSE_MODEL_PATH = settings.POSE_LANDMARKER_PATH
 
 # MediaPipe Pose skeleton connections
 POSE_CONNECTIONS = [
@@ -300,6 +299,13 @@ def save_to_csv(measurements, output_file):
 # ==========================================
 
 def main():
+    if not POSE_MODEL_PATH.is_file():
+        raise FileNotFoundError(
+            "MediaPipe pose model not found. Expected it at: {}".format(
+                POSE_MODEL_PATH
+            )
+        )
+
     """Main function."""
     print("\n" + "="*60)
     print("MEDIAPIPE POSE ESTIMATION BENCHMARK")

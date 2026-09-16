@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-import pepper_config as settings
+if __package__:
+    from . import pepper_config as settings
+else:
+    import pepper_config as settings
 settings.set_client_dir()
-import pose_stream_runtime2 as pose_stream_runtime
+if __package__:
+    from . import pose_stream_runtime
+else:
+    import pose_stream_runtime
 
 try:
     from naoqi import ALProxy

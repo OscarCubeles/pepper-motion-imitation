@@ -16,25 +16,18 @@ DL_POSE_DIR = CURRENT_FILE.parents[1]
 SERVER_DIR = CURRENT_FILE.parents[2]
 REPO_ROOT = CURRENT_FILE.parents[3]
 
-for path in (DL_POSE_DIR, SERVER_DIR, REPO_ROOT):
-    path_str = str(path)
-    if path_str not in sys.path:
-        sys.path.insert(0, path_str)
-
-import settings  # noqa: E402
-settings.add_server_dir_to_path()
-
-import ikpy_utils as ikpyu  # noqa: E402
-from angle_classifier_pepper import AngleClassifier  # noqa: E402
-from angle_classifier_human import HumanArmClassifier  # noqa: E402
-from hand_detection.EMA_smoothing import EMASmoothing  # noqa: E402
-from hand_keypoints import _extract_hand_points, _open_hand_landmarker  # noqa: E402
-import hand_orientation  # noqa: E402
-import kinematics.forward_kinematics as fk  # noqa: E402
-import kinematics.scaling_spherical as scaling  # noqa: E402
-import kinematics.transformation_matrices as tm  # noqa: E402
-import original_solution_adapter as original_adapter  # noqa: E402
-from pose_handling import PoseHandler  # noqa: E402
+from server.common import settings  # noqa: E402
+from server.ikpy import ikpy_utils as ikpyu  # noqa: E402
+from server.common.angle_classifier_pepper import AngleClassifier  # noqa: E402
+from server.proposed.angle_classifier_human import HumanArmClassifier  # noqa: E402
+from server.common.hand_detection.EMA_smoothing import EMASmoothing  # noqa: E402
+from server.common.hand_keypoints import _extract_hand_points, _open_hand_landmarker  # noqa: E402
+from server.common import hand_orientation  # noqa: E402
+import server.common.kinematics.forward_kinematics as fk  # noqa: E402
+import server.common.kinematics.scaling_spherical as scaling  # noqa: E402
+import server.common.kinematics.transformation_matrices as tm  # noqa: E402
+from server.baseline.evaluation import original_solution_adapter as original_adapter  # noqa: E402
+from server.proposed.pose_handling import PoseHandler  # noqa: E402
 
 
 ARM_SIDES = ("left", "right")

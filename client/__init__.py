@@ -1,0 +1,1 @@
+"""Pepper NAOqi client package."""

@@ -7,6 +7,8 @@ from ikpy.chain import Chain
 from ikpy.utils import plot
 
 import matplotlib.pyplot as plt
+
+from server.common import settings
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.widgets import Slider
 from matplotlib.gridspec import GridSpec
@@ -15,13 +17,13 @@ from ipywidgets import interact, FloatSlider
 import matplotlib.pyplot as plt
 
 
-def load_chains(script_dir):
+def load_chains(script_dir=None):
     # First, let's import the pepper chains
-    resources_dir = os.path.join(script_dir, "..", "pepper_ik_resources")
-    pepper_left_arm_chain = Chain.from_json_file(os.path.join(resources_dir, "pepper_left_arm.json"))
-    pepper_right_arm_chain = Chain.from_json_file(os.path.join(resources_dir, "pepper_right_arm.json"))
-    pepper_legs_chain = Chain.from_json_file(os.path.join(resources_dir, "pepper_legs.json"))
-    pepper_head_chain = Chain.from_json_file(os.path.join(resources_dir, "pepper_head.json"))
+    resources_dir = settings.PEPPER_RESOURCES_DIR
+    pepper_left_arm_chain = Chain.from_json_file(str(resources_dir / "pepper_left_arm.json"))
+    pepper_right_arm_chain = Chain.from_json_file(str(resources_dir / "pepper_right_arm.json"))
+    pepper_legs_chain = Chain.from_json_file(str(resources_dir / "pepper_legs.json"))
+    pepper_head_chain = Chain.from_json_file(str(resources_dir / "pepper_head.json"))
     return pepper_left_arm_chain, pepper_right_arm_chain, pepper_legs_chain, pepper_head_chain
 
 

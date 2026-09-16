@@ -16,12 +16,7 @@ DL_POSE_DIR = CURRENT_FILE.parents[1]
 SERVER_DIR = CURRENT_FILE.parents[2]
 REPO_ROOT = CURRENT_FILE.parents[3]
 
-for path in (DL_POSE_DIR, SERVER_DIR, REPO_ROOT, CURRENT_FILE.parent):
-    path_str = str(path)
-    if path_str not in sys.path:
-        sys.path.insert(0, path_str)
-
-import evaluate_ik_methods as ik_eval  # noqa: E402
+from server.baseline.evaluation import evaluate_ik_methods as ik_eval  # noqa: E402
 
 
 METHODS = ("current_solution_raw", "current_solution_constrained", "ikpy", "original_solution")

@@ -12,9 +12,6 @@ import streamlit as st
 CURRENT_FILE = Path(__file__).resolve()
 DL_POSE_DIR = CURRENT_FILE.parents[1]
 REPO_ROOT = CURRENT_FILE.parents[3]
-if str(DL_POSE_DIR) not in sys.path:
-    sys.path.insert(0, str(DL_POSE_DIR))
-
 DEFAULT_DATASET_ROOT = REPO_ROOT / "dataset"
 ORIENTATION_LABELS = ["FRONT", "BACK", "UP", "DOWN", "LEFT", "RIGHT"]
 ARM_SIDES = ["left", "right"]
@@ -346,7 +343,7 @@ def _project_corrected_points(points_3d):
     projected = {}
     if np.all(np.abs(object_points[:, 2]) > 1e-6):
         try:
-            from calibration_utils import load_metrabs_calibration
+            from server.common.calibration_utils import load_metrabs_calibration
 
             camera_matrix, distortion_coeffs = load_metrabs_calibration()
             image_points, _ = cv2.projectPoints(

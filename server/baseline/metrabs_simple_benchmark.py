@@ -13,11 +13,10 @@ from pathlib import Path
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "FALSE"
 
-import settings
-settings.add_server_dir_to_path()
+from server.common import settings
 
 import numpy as np
-import pose_mapping as pose_map
+from server.common import pose_mapping as pose_map
 
 
 # ==========================================

@@ -13,7 +13,7 @@ except ImportError:  # pragma: no cover
     from io import BytesIO
 
 CLIENT_DIR = os.path.dirname(os.path.abspath(__file__))
-KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics_new")
+KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics_baseline")
 EXERCISES_DIR = os.path.join(CLIENT_DIR, "exercises")
 
 # Keep flat imports consistent with the existing client scripts.

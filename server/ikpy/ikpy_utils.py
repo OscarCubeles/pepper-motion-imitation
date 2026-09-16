@@ -6,19 +6,17 @@ import sys
 import argparse
 import time
 from pathlib import Path
-import settings
+from server.common import settings
 from ikpy.chain import Chain
 import json
 
-# Add parent directory to path for importing perf_metrics
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import pose_mapping as pose_map
-
-# Add server directory to path for imports
-settings.add_server_dir_to_path()
+from server.common import pose_mapping as pose_map
 
 
 def _resolve_workspace_calibration_path(json_path):
+    if json_path == "metrabs_workspace.json":
+        return str(settings.IKPY_WORKSPACE_PATH)
+
     path = Path(json_path)
     if not path.is_absolute():
         path = Path(__file__).resolve().parent / path
@@ -39,11 +37,16 @@ def load_metrabs_calibration(
     with open(json_path, "r") as f:
         return json.load(f)
 
-def load_pepper_chains(script_dir):
-    """Load Pepper robot arm chains."""
-    resources_dir = os.path.join(script_dir, "..", "pepper_ik_resources")
-    left_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_left_arm.json"))
-    right_arm = Chain.from_json_file(os.path.join(resources_dir, "pepper_right_arm.json"))
+def load_pepper_chains(script_dir=None):
+    """Load Pepper robot arm chains from the shared resource directory.
+
+    ``script_dir`` is retained for compatibility with older callers, but paths
+    are resolved centrally so loading does not depend on the current working
+    directory or the caller's location.
+    """
+    resources_dir = settings.PEPPER_RESOURCES_DIR
+    left_arm = Chain.from_json_file(str(resources_dir / "pepper_left_arm.json"))
+    right_arm = Chain.from_json_file(str(resources_dir / "pepper_right_arm.json"))
 
     print("Pepper left arm joints:")
 
@@ -91,8 +94,10 @@ def compute_ik_from_metrabs_coordinate_adjusted_2(
 
     if calibration is None:
         raise RuntimeError(
-            "Calibration file not found. "
-            "Run calibration first."
+            "IKPy workspace calibration not found at {}. "
+            "Generate it with `python -m server.ikpy.run_ikpy_no_client`.".format(
+                _resolve_workspace_calibration_path(calibration_file)
+            )
         )
 
     IKPY_WORKSPACE = {
@@ -223,8 +228,10 @@ def compute_ik_from_wrist_thor_coordinate_adjusted(
 
     if calibration is None:
         raise RuntimeError(
-            "Calibration file not found. "
-            "Run calibration first."
+            "IKPy workspace calibration not found at {}. "
+            "Generate it with `python -m server.ikpy.run_ikpy_no_client`.".format(
+                _resolve_workspace_calibration_path(calibration_file)
+            )
         )
 
     IKPY_WORKSPACE = {

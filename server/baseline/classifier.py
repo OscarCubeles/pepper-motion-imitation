@@ -5,7 +5,7 @@ Computes geometric vectors and features from 3D keypoints.
 
 import numpy as np
 from typing import Dict, Optional
-from settings import KINECTV2_25_JOINTS
+from server.common.settings import KINECTV2_25_JOINTS
 
 # Metrabs bounding box is 2200mm (±1100mm from center)
 METRABS_HALF_BOX_MM = 1100.0

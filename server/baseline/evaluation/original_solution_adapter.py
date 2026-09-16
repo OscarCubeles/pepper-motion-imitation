@@ -34,7 +34,16 @@ def _load_original_modules():
     return tfm, ik, mf
 
 
-_TFM, _IK, _MF = _load_original_modules()
+_TFM = None
+_IK = None
+_MF = None
+
+
+def _ensure_original_modules_loaded():
+    """Load the optional historical implementation only when it is evaluated."""
+    global _TFM, _IK, _MF
+    if _TFM is None or _IK is None or _MF is None:
+        _TFM, _IK, _MF = _load_original_modules()
 
 
 def _safe_vector(value):
@@ -154,6 +163,7 @@ def _get_elbow_wrist_fitted(elbow, wrist, arm):
 
 
 def compute_arm_angles(torso, shoulder, elbow, wrist, other_shoulder, side):
+    _ensure_original_modules_loaded()
     torso = _safe_vector(torso)
     shoulder = _safe_vector(shoulder)
     elbow = _safe_vector(elbow)

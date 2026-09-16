@@ -6,12 +6,6 @@ from unittest import mock
 
 
 EVALUATION_DIR = Path(__file__).resolve().parents[1]
-DL_POSE_DIR = EVALUATION_DIR.parent
-for path in (EVALUATION_DIR, DL_POSE_DIR):
-    path_string = str(path)
-    if path_string not in sys.path:
-        sys.path.insert(0, path_string)
-
 MODULE_PATH = EVALUATION_DIR / "evaluate_ik_methods.py"
 SPEC = importlib.util.spec_from_file_location("evaluate_ik_methods_under_test", MODULE_PATH)
 evaluate_ik_methods = importlib.util.module_from_spec(SPEC)

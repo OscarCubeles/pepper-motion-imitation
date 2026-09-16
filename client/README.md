@@ -8,10 +8,10 @@ The client runs on Python 2.7, receives streamed 3D pose data from a server, con
 
 The maintained client entry points are:
 
-- `imitation_client.py`
+- `run_imitation_client.py`
 - `demonstration_client.py`
 - `pose_stream_runtime.py`
-- `kinematics_new/`
+- `kinematics_baseline/`
 - `exercises/`
 
 Latency measurement guide:
@@ -34,8 +34,8 @@ The client performs the same high-level steps regardless of which server backend
 In the maintained implementation:
 
 - `pose_stream_runtime.py` owns the shared WebSocket runtime
-- `kinematics_new/scaling_spherical.py` converts streamed pose frames into Pepper joint targets
-- `kinematics_new/pepper_commands.py` sends those commands to Pepper
+- `kinematics_baseline/scaling_spherical.py` converts streamed pose frames into Pepper joint targets
+- `kinematics_baseline/pepper_commands.py` sends those commands to Pepper
 
 ## Client Architecture
 
@@ -47,7 +47,7 @@ In the maintained implementation:
 
 ### Kinematics and robot output
 
-- `kinematics_new/`
+- `kinematics_baseline/`
   - coordinate transforms
   - workspace fitting
   - inverse kinematics
@@ -73,7 +73,7 @@ Pepper receives the streamed pose continuously and mirrors or imitates the detec
 
 Entry point:
 
-- `client/imitation_client.py`
+- `client/run_imitation_client.py`
 
 ### Demonstration mode
 
@@ -176,7 +176,7 @@ The maintained client entry points use:
 
 These values are defined in:
 
-- `client/imitation_client.py`
+- `client/run_imitation_client.py`
 - `client/demonstration_client.py`
 - `client/pose_stream_runtime.py`
 
@@ -202,7 +202,7 @@ Imitation mode now uses fixed-rate robot command dispatch plus lightweight comma
 - decode thread keeps consuming pose frames as fast as they arrive
 - command thread sends at a fixed backend-dependent cadence
 - each command tick uses the latest buffered targets (no command backlog)
-- command shaping is applied before `ALMotion.setAngles` in `kinematics_new/pepper_commands.py`
+- command shaping is applied before `ALMotion.setAngles` in `kinematics_baseline/pepper_commands.py`
   - per-joint deadband
   - per-tick delta clamp
   - adaptive EMA (`alpha_slow` to `alpha_fast`)
@@ -265,7 +265,7 @@ python client\test_play_laptop_audio_stream.py
 
 ```powershell
 conda activate pepper
-python client\imitation_client.py
+python client\run_imitation_client.py
 ```
 
 ### Demonstration mode
@@ -295,13 +295,13 @@ The shared client runtime in `pose_stream_runtime.py` currently:
 
 ## Related Files
 
-- `kinematics_new/README.md`
+- `kinematics_baseline/README.md`
   - kinematics and Pepper-control internals
 
 - `../server/README.md`
   - shared server architecture and transport contract
 
-- `../server/dl-pose/README.md`
+- `../server/README.md`
   - MetrAbs webcam backend
 
 - `../server/zed_cam/README.md`

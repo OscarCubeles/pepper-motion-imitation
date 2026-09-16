@@ -2,20 +2,14 @@ import cv2
 import torch
 import numpy as np
 import os
-import sys
 import argparse
 import time
 from pathlib import Path
-import settings
+from server.common import settings
 from ikpy.chain import Chain
 import json
 
-# Add parent directory to path for importing perf_metrics
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import pose_mapping as pose_map
-
-# Add server directory to path for imports
-settings.add_server_dir_to_path()
+from server.common import pose_mapping as pose_map
 
 
 def _resolve_workspace_calibration_path(json_path):

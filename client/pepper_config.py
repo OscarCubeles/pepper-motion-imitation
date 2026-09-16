@@ -130,7 +130,7 @@ def get_pepper_endpoint():
 
 def set_pose_stream_runtime_dir():
     CLIENT_DIR = os.path.dirname(os.path.abspath(__file__))
-    KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics")
+    KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics_baseline")
     EXERCISES_DIR = os.path.join(CLIENT_DIR, "exercises")
 
     # Keep legacy flat imports working after moving modules into subfolders.
@@ -146,7 +146,7 @@ def set_client_dir():
 
 def set_demonstration_client_dir():
     CLIENT_DIR = os.path.dirname(os.path.abspath(__file__))
-    KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics")
+    KINEMATICS_DIR = os.path.join(CLIENT_DIR, "kinematics_baseline")
     EXERCISES_DIR = os.path.join(CLIENT_DIR, "exercises")
 
     # Keep flat imports consistent with the existing client scripts.
