@@ -218,3 +218,7 @@ __marimo__/
 .streamlit/secrets.toml
 # Local MetrAbs checkpoint (too large for source control).
 server/common/models/metrabs_eff2l_384px_800k_28ds_pytorch/ckpt.pt
+
+
+# Dataset
+dataset/
