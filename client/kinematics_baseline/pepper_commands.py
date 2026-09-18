@@ -16,6 +16,7 @@ if EXERCISES_DIR not in sys.path:
     sys.path.insert(0, EXERCISES_DIR)
 
 from torso_imitation_logger import log_torso_command
+from joint_limits import clamp_joint_target
 from pepper_config import (
     PEPPER_IP,
     PEPPER_PORT,
@@ -78,6 +79,7 @@ def _filter_valid_joint_targets(names, angles, speeds=None):
             continue
         if np.isnan(angle_value):
             continue
+        angle_value = clamp_joint_target(name, angle_value)
         valid_names.append(name)
         valid_angles.append(angle_value)
         if valid_speeds is not None:
@@ -173,6 +175,9 @@ def _shape_joint_targets(names, angles):
                 if abs(shaped - prev_sent) < _SMOOTHING_DEADBAND_RAD:
                     shaped = prev_sent
 
+            # Reapply hard limits after filtering and step limiting so the
+            # value passed to ALMotion can never leave the permitted range.
+            shaped = clamp_joint_target(name, shaped)
             _filtered_angles_by_joint[name] = shaped
             shaped_angles.append(shaped)
 
@@ -313,6 +318,9 @@ def send_torso_values(t1, t2, t3):
 
     names = ["KneePitch", "HipPitch", "HipRoll"]
     angles = [t1, t2, t3]
+    names, angles, _ = _filter_valid_joint_targets(names, angles)
+    if not angles:
+        return
    
     try: 
         motion.setAngles(names, angles, TORSO_SPEED_FRACTION)

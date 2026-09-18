@@ -192,7 +192,11 @@ def _visualizer_worker(
             hand_points_3d_world = payload.get("hand_points_3d_world")
             hand_points_2d = payload.get("extra_points_2d")
             frame_bgr = payload.get("frame_bgr")
-            if hand_points_3d_world and frame_bgr is not None:
+            if (
+                settings.ENABLE_CAMERA_TEXT_OVERLAYS
+                and hand_points_3d_world
+                and frame_bgr is not None
+            ):
                 _draw_hand_orientation_overlay(frame_bgr, hand_points_2d, hand_points_3d_world)
             
             # Add diagnostics overlay (missing keypoints, feasibility, singularities)
@@ -217,6 +221,7 @@ def _visualizer_worker(
                 units_to_meters=0.001,
                 source_name="dl-pose",
                 draw_bounding_box=settings.ENABLE_BOUNDING_BOX,
+                draw_camera_text=settings.ENABLE_CAMERA_TEXT_OVERLAYS,
                 inference_fps=payload.get("inference_fps"),
             )
             

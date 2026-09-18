@@ -1092,6 +1092,7 @@ class PoseVisualizer:
         wait_key_delay: int = 1,
         source_name: str | None = None,
         draw_bounding_box: bool = True,
+        draw_camera_text: bool = True,
     ) -> VisualizationResult:
         """Process one frame and display the updated visualization window.
 
@@ -1136,6 +1137,8 @@ class PoseVisualizer:
             Override the source label in the title bar.
         draw_bounding_box : bool
             Whether to draw bounding boxes / polygons on the 2D panel.
+        draw_camera_text : bool
+            Whether to draw labels directly over the 2D camera panel.
 
         Returns
         -------
@@ -1228,16 +1231,17 @@ class PoseVisualizer:
                     continue
                 x, y = int(joint[0]), int(joint[1])
                 cv2.circle(left_view, (x, y), 4, (0, 220, 0), -1)  # Green filled circle
-                cv2.putText(
-                    left_view,
-                    str(joint_idx),
-                    (x + 6, y - 6),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.45,
-                    (255, 255, 255),
-                    1,
-                    cv2.LINE_AA,
-                )
+                if draw_camera_text:
+                    cv2.putText(
+                        left_view,
+                        str(joint_idx),
+                        (x + 6, y - 6),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.45,
+                        (255, 255, 255),
+                        1,
+                        cv2.LINE_AA,
+                    )
 
             # -----------------------------------------------------------
             # Draw bounding box or polygon around the tracked person.
@@ -1290,7 +1294,7 @@ class PoseVisualizer:
                         label_anchor = (bbox[0], bbox[1])
 
                 # Place a "Tracked" label above the bounding region.
-                if label_anchor is not None:
+                if draw_camera_text and label_anchor is not None:
                     cv2.putText(
                         left_view,
                         "Tracked",
@@ -1312,16 +1316,17 @@ class PoseVisualizer:
                     if not (0 <= int(x) < frame_w and 0 <= int(y) < frame_h):
                         continue
                     cv2.circle(left_view, (int(x), int(y)), 5, (255, 0, 180), -1)  # Magenta
-                    cv2.putText(
-                        left_view,
-                        f"{label}:{point_idx}",
-                        (int(x) + 6, int(y) - 6),
-                        cv2.FONT_HERSHEY_SIMPLEX,
-                        0.5,
-                        (255, 255, 255),
-                        1,
-                        cv2.LINE_AA,
-                    )
+                    if draw_camera_text:
+                        cv2.putText(
+                            left_view,
+                            f"{label}:{point_idx}",
+                            (int(x) + 6, int(y) - 6),
+                            cv2.FONT_HERSHEY_SIMPLEX,
+                            0.5,
+                            (255, 255, 255),
+                            1,
+                            cv2.LINE_AA,
+                        )
 
         # ---------------------------------------------------------------
         # Render the 3D panel and letterbox the 2D panel to match sizes.

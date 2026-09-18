@@ -1,308 +1,200 @@
-# Client
+# Pepper Client
 
-## Overview
+The client receives pose data from any of the three server methods and sends
+joint commands to Pepper through NAOqi. The maintained entry point is
+`client/run_imitation_client.py`.
 
-This directory contains the client-side half of the Exercise Motivation System.
+## 1. Responsibilities
 
-The client runs on Python 2.7, receives streamed 3D pose data from a server, converts that pose into Pepper-compatible joint targets, and sends those commands to Pepper through the NAOqi SDK.
+The client:
 
-The maintained client entry points are:
+1. connects to the pose server over WebSocket;
+2. sends the `keypoints` startup request;
+3. decodes the latest pose payload;
+4. uses server-computed angles when they are available;
+5. otherwise computes analytical inverse kinematics from the pose;
+6. shapes and dispatches commands to Pepper at a fixed rate; and
+7. restores the configured robot safety state during cleanup.
 
-- `run_imitation_client.py`
-- `demonstration_client.py`
-- `pose_stream_runtime.py`
-- `kinematics_baseline/`
-- `exercises/`
+The imitation client does not create an `ALTextToSpeech` or `ALAudioDevice`
+proxy and does not send audio to Pepper.
 
-Latency measurement guide:
+## 2. Environment setup
 
-- `../LATENCY_README.md`
-
-This README is the shared client overview. It explains the general working principle, installation, and the difference between imitation mode and demonstration mode. It does not go into detailed mode behavior.
-
-## Working Principle
-
-The client performs the same high-level steps regardless of which server backend is used:
-
-1. connect to the pose server over WebSocket
-2. request streamed keypoints
-3. decode the incoming compact pose payload
-4. convert the streamed keypoints into Pepper's coordinate system
-5. apply workspace fitting and inverse kinematics
-6. send joint targets to Pepper through NAOqi
-
-In the maintained implementation:
-
-- `pose_stream_runtime.py` owns the shared WebSocket runtime
-- `kinematics_baseline/scaling_spherical.py` converts streamed pose frames into Pepper joint targets
-- `kinematics_baseline/pepper_commands.py` sends those commands to Pepper
-
-## Client Architecture
-
-### Shared runtime
-
-- `pose_stream_runtime.py`
-  - shared stream receiver and decode path
-  - handles WebSocket connection, stop behavior, and cleanup
-
-### Kinematics and robot output
-
-- `kinematics_baseline/`
-  - coordinate transforms
-  - workspace fitting
-  - inverse kinematics
-  - Pepper command output
-
-### Exercise and scoring support
-
-- `exercises/`
-  - exercise templates
-  - human-motion logging
-  - template logging
-  - DTW-based scoring utilities
-
-## Modes
-
-The maintained client supports two top-level modes.
-
-### Imitation mode
-
-Imitation mode is the live motion-following mode.
-
-Pepper receives the streamed pose continuously and mirrors or imitates the detected person in real time.
-
-Entry point:
-
-- `client/run_imitation_client.py`
-
-### Demonstration mode
-
-Demonstration mode is the exercise-guided mode.
-
-Pepper performs a predefined exercise template while the client records the human response and runs an assessment step afterward.
-
-Current maintained demonstration feedback behavior:
-
-- Start cues are prerecorded WAV files loaded from `ai_feedback_server/audio/`:
-  - `Hallo.wav`
-  - `Folgen.wav`
-- After DTW scoring, feedback audio is requested from `FEEDBACK_SERVER_URL` and streamed to Pepper from RAM.
-- End cue is a prerecorded WAV:
-  - `Spaß.wav`
-- No Pepper `ALTextToSpeech` fallback is used in this maintained path.
-- Demonstration logging plots are saved to disk; interactive plot windows are disabled by default.
-- Demonstration capture waits for the first pose payload before timing the capture window.
-- If no payload arrives within startup timeout, demonstration capture aborts with stop reason `first_payload_timeout`.
-
-Entry point:
-
-- `client/demonstration_client.py`
-
-## Installation
-
-### Requirements
-
-- Windows
-- Miniconda or Anaconda
-- Python 2.7, 32-bit
-- NAOqi Python 2.7 SDK 2.5.5
-
-The client must stay on Python 2.7 because Pepper communication depends on the NAOqi Python 2 SDK.
-
-### 1. Create the conda environment
+Pepper's NAOqi Python SDK requires 32-bit Python 2.7.
 
 ```powershell
 conda create -n pepper
 conda activate pepper
 conda config --env --set subdir win-32
 conda install python=2.7
+pip install numpy websocket-client keyboard
 ```
 
-Verify that the environment is really 32-bit:
+Verify the interpreter:
 
 ```powershell
-python -c "import platform; print(platform.architecture())"
 python --version
+python -c "import platform; print(platform.architecture())"
 ```
 
-Expected architecture output:
+Expected values are Python `2.7.x` and `32bit`.
+
+### 2.1 NAOqi SDK
+
+Install the Windows 32-bit NAOqi Python SDK 2.5.5. One supported approach is
+to add its `lib` directory to a `conda.pth` file inside the environment's
+`Lib/site-packages` directory.
+
+Example SDK path:
 
 ```text
-('32bit', 'WindowsPE')
+C:\pynaoqi-python2.7-2.5.5.5-win32-vs2013\lib
 ```
 
-### 2. Install the NAOqi SDK
-
-1. Download the NAOqi Python 2.7 SDK 2.5.5.
-2. Extract it to a stable local path such as:
-   - `C:\pynaoqi-python2.7-2.5.5.5-win32-vs2013\`
-3. Create `conda.pth` in:
-   - `C:\Users\<username>\miniconda3\envs\pepper\Lib\site-packages`
-4. Add the SDK `lib` path to that file:
-   - `C:\pynaoqi-python2.7-2.5.5.5-win32-vs2013\lib`
-
-Verify the SDK import:
+Verify the SDK:
 
 ```powershell
 python -c "from naoqi import qi; print(qi.__version__)"
 ```
 
-Expected output:
+Expected version: `2.5.5.5`.
 
-```text
-2.5.5.5
-```
+## 3. Configuration
 
-### 3. Install Python dependencies
+Client configuration is centralized in `client/pepper_config.py`.
 
-```powershell
-pip install numpy websocket-client keyboard
-```
+### 3.1 Robot endpoint
 
-Optional, but useful for exercise logging plots:
-
-```powershell
-pip install matplotlib
-```
-
-## Configuration Notes
-
-### Pose server host and port
-
-The maintained client entry points use:
-
-- host: `localhost`
-- port: `8080`
-
-These values are defined in:
-
-- `client/run_imitation_client.py`
-- `client/demonstration_client.py`
-- `client/pose_stream_runtime.py`
-
-Update them only if the server runs elsewhere.
-
-### Pepper IP
-
-Pepper endpoint config is centralized in:
-
-- `client/pepper_config.py`
-
-Change only `PEPPER_MODE`:
-
-- `"sim"` uses `127.0.0.1`
-- `"real"` uses `192.168.0.102`
-
-All maintained client entry points and helper scripts now read from this shared config.
-
-### Imitation command pacing and smoothing
-
-Imitation mode now uses fixed-rate robot command dispatch plus lightweight command shaping:
-
-- decode thread keeps consuming pose frames as fast as they arrive
-- command thread sends at a fixed backend-dependent cadence
-- each command tick uses the latest buffered targets (no command backlog)
-- command shaping is applied before `ALMotion.setAngles` in `kinematics_baseline/pepper_commands.py`
-  - per-joint deadband
-  - per-tick delta clamp
-  - adaptive EMA (`alpha_slow` to `alpha_fast`)
-
-Configuration is centralized in `client/pepper_config.py`.
-
-Current parameter examples from maintained defaults:
+Set `PEPPER_MODE`:
 
 ```python
-POSE_BACKEND_PROFILE = "metrabs"
-POSE_COMMAND_RATE_HZ_BY_BACKEND = {
-    "metrabs": 15.0,
-    "zed": 25.0,
-}
-
-POSE_SMOOTHING_DEADBAND_RAD = 0.01
-POSE_SMOOTHING_MAX_DELTA_RAD_PER_TICK = 0.06
-POSE_SMOOTHING_ALPHA_SLOW = 0.40
-POSE_SMOOTHING_ALPHA_FAST = 0.80
-POSE_SMOOTHING_FAST_DELTA_RAD = 0.06
-
-CHAIN_SPEED_FRACTIONS = {
-    "torso": 0.25,
-    "head": 0.25,
-    "others": 0.25,
-}
+PEPPER_MODE = "sim"     # Choregraphe/local simulator at 127.0.0.1
+# PEPPER_MODE = "real"  # Physical Pepper at 192.168.0.102 by default
 ```
 
-### Feedback server URL and timeout
+The default NAOqi port is `9559`.
 
-Demonstration-mode feedback audio calls read from environment via `client/pepper_config.py`:
+### 3.2 Pose server
 
-- `FEEDBACK_SERVER_URL` (default: `http://localhost:8091`)
-- `FEEDBACK_SERVER_TIMEOUT_SEC` (default: `20.0`)
+Default connection:
 
-Example (PowerShell):
-
-```powershell
-$env:FEEDBACK_SERVER_URL = "http://localhost:8091"
-$env:FEEDBACK_SERVER_TIMEOUT_SEC = "20"
+```python
+SERVER_HOST = "localhost"
+PORT = 8080
+REQUEST_MESSAGE = "keypoints"
 ```
 
-Playback path in demonstration mode:
+The server currently binds to `127.0.0.1`, so the client normally runs on the
+same computer.
 
-- Feedback WAV bytes are streamed directly from RAM to Pepper using `ALAudioDevice.sendRemoteBufferToOutput`.
-- No feedback file is written to Pepper storage.
-- No temporary feedback WAV file is written on the laptop client.
-- Prerecorded cue WAVs must exist in `ai_feedback_server/audio/`.
-- For robust startup on cold pose servers, demonstration mode waits for first payload (default timeout: `12.0s`).
+### 3.3 Command rate and smoothing
 
-Quick manual audio-stream test:
+The runtime keeps only the newest pose and newest target command. It does not
+queue stale motion frames.
 
-```powershell
-python client\test_play_laptop_audio_stream.py
-```
+Current configuration includes:
 
-## Run Commands
+- backend-dependent command rate (`15 Hz` for the MetrAbs profile);
+- a final `HipRoll` command limit of -15° to +15° for every method;
+- per-joint deadband;
+- per-tick delta limiting;
+- adaptive exponential smoothing; and
+- chain-specific Pepper speed fractions.
 
-### Imitation mode
+The corresponding values and environment-variable overrides are documented in
+`client/pepper_config.py`.
+
+## 4. Run the client
+
+Start one server first, then run:
 
 ```powershell
 conda activate pepper
-python client\run_imitation_client.py
+python client/run_imitation_client.py
 ```
 
-### Demonstration mode
+Press `q` to stop.
+
+The same client is used for:
+
+- `server.baseline.run_motion_imitation_server`;
+- `server.proposed.run_motion_imitation_server`; and
+- `server.ikpy.run_motion_imitation_server`.
+
+## 5. Payload handling
+
+The current server sends a JSON object containing a base64-encoded `float32`
+pose under `pose_keypoints` and hand-orientation metadata under
+`hand_orientation`.
+
+The decoder accepts four layouts for backward compatibility:
+
+| Joint count | Content |
+|---:|---|
+| 10 | Body joints only |
+| 12 | Body joints and two fingertips |
+| 20 | Body, fingertips, and hand-orientation landmarks |
+| 26 | Current layout, including palm-axis vectors |
+
+Proposed and IKPy payloads may also include an `angles` object with Pepper
+angles and speeds. The baseline payload omits it, so the client uses its local
+analytical kinematics path.
+
+## 6. Main files
+
+| File or folder | Purpose |
+|---|---|
+| `run_imitation_client.py` | Canonical, audio-free entry point |
+| `pose_stream_runtime.py` | WebSocket receive, decode, buffering, and command loop |
+| `server_angle_payload.py` | Validation and conversion of server angle payloads |
+| `joint_limits.py` | Final shared joint limits, including HipRoll ±15° |
+| `pepper_config.py` | Robot, server, timing, and smoothing configuration |
+| `kinematics_baseline/` | Analytical transforms, fitting, IK, and Pepper commands |
+| `client_visualization.py` | Client-side visualization helpers |
+| `imitaiton_client*.py` | Legacy compatibility entry points; also audio-free |
+| `demonstration_client.py` | Separate exercise-demonstration workflow |
+
+The demonstration workflow is not one of the three imitation methods and has
+its own external assets and audio behavior.
+
+## 7. Tests
+
+Run client tests in the Python 2.7 environment:
 
 ```powershell
-conda activate pepper
-python client\demonstration_client.py
+python -m unittest discover -s client/tests -p "test_*.py"
 ```
 
-## Runtime Behavior
+See [the central testing guide](../server/tests/README.md) for the complete test
+inventory.
 
-The shared client runtime in `pose_stream_runtime.py` currently:
+## 8. Troubleshooting
 
-- connects to `ws://<host>:<port>/PepperCommands`
-- sends the startup message `keypoints`
-- decodes either a `10 x 3` or `12 x 3` `float32` pose payload
-- drops stale frames instead of building up a queue
-- runs fixed-rate command dispatch in imitation mode:
-  - `15 FPS` for `metrabs` backend profile
-  - `25 FPS` for `zed` backend profile
-- uses latest-target buffering between decode and command threads
-- applies command shaping (deadband, delta clamp, adaptive EMA) before robot output
-- supports manual stop with the `q` key
-- supports auto-stop timers either from connection start or from first received payload
-- supports optional startup timeout when no first payload arrives
-- restores Pepper safety settings on cleanup in normal imitation mode
+### NAOqi cannot be imported
 
-## Related Files
+Confirm that the environment is 32-bit and that the SDK `lib` directory is in
+`Lib/site-packages/conda.pth`.
 
-- `kinematics_baseline/README.md`
-  - kinematics and Pepper-control internals
+### The client cannot connect
 
-- `../server/README.md`
-  - shared server architecture and transport contract
+Start exactly one server, confirm it reports port `8080`, and check
+`SERVER_HOST` in `pepper_config.py`.
 
-- `../server/README.md`
-  - MetrAbs webcam backend
+### Pepper does not move
 
-- `../server/zed_cam/README.md`
-  - ZED backend
+Check `PEPPER_MODE`, the robot IP, NAOqi connectivity, and
+`ENABLE_ROBOT_IMITATION` in `pepper_config.py`.
+
+### Motion is delayed
+
+Check network latency and server inference FPS. Avoid increasing queue sizes;
+the latest-only buffering is intentional.
+
+## 9. Related documentation
+
+- [Root setup and execution](../README.md)
+- [Shared server and payload](../server/common/README.md)
+- [Baseline method](../server/baseline/README.md)
+- [Proposed method](../server/proposed/README.md)
+- [IKPy method](../server/ikpy/README.md)
