@@ -29,7 +29,6 @@ The repository contains three motion-imitation methods:
 Implements the analytical human-to-Pepper imitation approach. The server sends
 the detected pose, and the client computes Pepper joint targets.
 
-- [Baseline documentation](server/baseline/README.md)
 
 [![Proposed baseline demo](dashboards/results/baseline_example.png)](dashboards/results/baseline_demo.mp4)
 
@@ -39,7 +38,6 @@ the detected pose, and the client computes Pepper joint targets.
 Computes Pepper angles on the server and applies the thesis method's wrist
 orientation and singularity-handling logic.
 
-- [Proposed Constrained Method documentation](server/proposed/README.md)
 
 [![Proposed Constrained Method demo](dashboards/results/proposed_example.png)](dashboards/results/proposed_demo.mp4)
 
@@ -48,7 +46,6 @@ orientation and singularity-handling logic.
 
 Uses IKPy as a numerical inverse-kinematics comparison method.
 
-- [IKPy documentation](server/ikpy/README.md)
 [![Proposed IKPy demo](dashboards/results/ikpy_example.png)](dashboards/results/ikpy_demo.mp4)
 
 
