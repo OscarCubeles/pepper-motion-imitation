@@ -31,9 +31,7 @@ the detected pose, and the client computes Pepper joint targets.
 
 - [Baseline documentation](server/baseline/README.md)
 
-<video src="dashboards/results/baseline_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+[Watch the Baseline demo](dashboards/results/baseline_demo.mp4)
 
 
 ### 1.2 [Proposed Constrained Method](server/proposed/README.md)
@@ -43,9 +41,7 @@ orientation and singularity-handling logic.
 
 - [Proposed Constrained Method documentation](server/proposed/README.md)
 
-<video src="dashboards/results/proposed_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+[![Proposed Constrained Method demo](dashboards/results/proposed_example.png)](dashboards/results/proposed_demo.mp4)
 
 
 ### 1.3 [IKPy](server/ikpy/README.md)
@@ -54,9 +50,18 @@ Uses IKPy as a numerical inverse-kinematics comparison method.
 
 - [IKPy documentation](server/ikpy/README.md)
 
-<video src="dashboards/results/ikpy_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+[Watch the IKPy demo](dashboards/results/ikpy_demo.mp4)
+
+
+## Dashboards
+
+The repository includes a dataset annotation dashboard and an evaluation
+results dashboard. Click an image to open the corresponding dashboard
+documentation.
+
+| Dataset annotation | Evaluation results |
+| --- | --- |
+| [![Dataset annotation dashboard](dashboards/results/dataset_annotation_dashboard.png)](dashboards/README.md#dataset-annotation-dashboard) | [![Evaluation results dashboard](dashboards/results/evaluation_dashboard.png)](dashboards/README.md#evaluation-results-dashboard) |
 
 
 ## 2. Setup
