@@ -31,7 +31,7 @@ the detected pose, and the client computes Pepper joint targets.
 
 - [Baseline documentation](server/baseline/README.md)
 
-[Watch the Baseline demo](dashboards/results/baseline_demo.mp4)
+[![Proposed baseline demo](dashboards/results/baseline_example.png)](dashboards/results/baseline_demo.mp4)
 
 
 ### 1.2 [Proposed Constrained Method](server/proposed/README.md)
@@ -49,8 +49,8 @@ orientation and singularity-handling logic.
 Uses IKPy as a numerical inverse-kinematics comparison method.
 
 - [IKPy documentation](server/ikpy/README.md)
+[![Proposed IKPy demo](dashboards/results/ikpy_example.png)](dashboards/results/ikpy_demo.mp4)
 
-[Watch the IKPy demo](dashboards/results/ikpy_demo.mp4)
 
 
 ## Dashboards
