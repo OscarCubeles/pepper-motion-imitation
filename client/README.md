@@ -42,9 +42,10 @@ Expected values are Python `2.7.x` and `32bit`.
 
 ### 2.1 NAOqi SDK
 
-Install the Windows 32-bit NAOqi Python SDK 2.5.5. One supported approach is
-to add its `lib` directory to a `conda.pth` file inside the environment's
-`Lib/site-packages` directory.
+Download the Windows 32-bit NAOqi Python SDK 2.5.5 from the
+[NAOqi SDK download](https://drive.google.com/file/d/1X7MXJbRihu_tOzR3D7qeYpLC1brGUX93/view?usp=sharing).
+One supported approach is to add its `lib` directory to a `conda.pth` file
+inside the environment's `Lib/site-packages` directory.
 
 Example SDK path:
 

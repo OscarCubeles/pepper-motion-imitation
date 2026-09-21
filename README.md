@@ -154,8 +154,10 @@ conda install python=2.7
 pip install numpy websocket-client keyboard
 ```
 
-Install the 32-bit NAOqi Python SDK 2.5.5 and make its `lib` directory
-importable from the `pepper` environment. Verify it with:
+Download the 32-bit NAOqi Python SDK 2.5.5 from the
+[NAOqi SDK download](https://drive.google.com/file/d/1X7MXJbRihu_tOzR3D7qeYpLC1brGUX93/view?usp=sharing),
+then make its `lib` directory importable from the `pepper` environment. Verify
+it with:
 
 ```powershell
 python -c "import platform; print(platform.architecture())"
@@ -204,8 +206,7 @@ address and client host are changed.
 
 Press `q` to stop the visualization/client, or use `Ctrl+C` in a headless
 server. All three imitation methods are silent and do not send audio to Pepper.
-The shared client also limits every `HipRoll` command to the inclusive range
-from -15° to +15°.
+
 
 ## 4. Detailed documentation
 
