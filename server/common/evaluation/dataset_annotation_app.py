@@ -12,7 +12,7 @@ import streamlit as st
 CURRENT_FILE = Path(__file__).resolve()
 DL_POSE_DIR = CURRENT_FILE.parents[1]
 REPO_ROOT = CURRENT_FILE.parents[3]
-DEFAULT_DATASET_ROOT = REPO_ROOT / "dataset"
+DEFAULT_DATASET_ROOT = REPO_ROOT / "processed_data"
 ORIENTATION_LABELS = ["FRONT", "BACK", "UP", "DOWN", "LEFT", "RIGHT"]
 ARM_SIDES = ["left", "right"]
 JOINT_ANGLE_KEYS = ["shoulder_pitch", "shoulder_roll", "elbow_yaw", "elbow_roll"]

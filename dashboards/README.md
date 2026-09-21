@@ -20,7 +20,7 @@ Run all commands from the repository root.
 streamlit run dashboards/annotation-dashboard/dataset_annotation_app.py
 ```
 
-This dashboard loads videos from `dataset/`, displays frames and pose
+This dashboard loads videos from `processed_data/`, displays frames and pose
 annotations, and saves manual corrections to `annotations_filled.json`.
 
 ## Evaluation results dashboard

@@ -17,7 +17,7 @@ REPO_ROOT = CURRENT_FILE.parents[2]
 if str(DL_POSE_DIR) not in sys.path:
     sys.path.insert(0, str(DL_POSE_DIR))
 
-DEFAULT_DATASET_ROOT = REPO_ROOT / "dataset"
+DEFAULT_DATASET_ROOT = REPO_ROOT / "processed_data"
 
 
 ORIENTATION_LABELS = ["FRONT", "BACK", "UP", "DOWN", "LEFT", "RIGHT"]
