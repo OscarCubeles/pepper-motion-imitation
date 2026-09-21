@@ -8,7 +8,7 @@ The repository contains three motion-imitation methods:
 
 - **[Baseline](server/baseline/README.md):** analytical pose-matching method
   with client-side inverse kinematics.
-- **[Proposed method](server/proposed/README.md):** server-side joint angles,
+- **[Proposed Constrained Method](server/proposed/README.md):** server-side joint angles,
   wrist orientation, and singularity handling.
 - **[IKPy](server/ikpy/README.md):** numerical inverse-kinematics comparison
   method.
@@ -37,12 +37,12 @@ the detected pose, and the client computes Pepper joint targets.
 </video>
 
 
-### 1.2 [Proposed method](server/proposed/README.md)
+### 1.2 [Proposed Constrained Method](server/proposed/README.md)
 
 Computes Pepper angles on the server and applies the thesis method's wrist
 orientation and singularity-handling logic.
 
-- [Proposed-method documentation](server/proposed/README.md)
+- [Proposed Constrained Method documentation](server/proposed/README.md)
 
 <video src="dashboards/results/proposed_demo.mp4" controls width="720">
   Your browser does not support embedded video.
@@ -210,7 +210,7 @@ from -15° to +15°.
   WebSocket, visualization, settings, and shared assets.
 - [Baseline](server/baseline/README.md): analytical baseline, calibration,
   benchmarks, and evaluation tools.
-- [Proposed method](server/proposed/README.md): server-side angle calculation
+- [Proposed Constrained Method](server/proposed/README.md): server-side angle calculation
   and singularity handling.
 - [IKPy](server/ikpy/README.md): IKPy chains, workspace calibration, runtime,
   and notebooks.

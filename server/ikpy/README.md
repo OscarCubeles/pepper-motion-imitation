@@ -1,7 +1,7 @@
 # IKPy Method
 
 The IKPy method provides a numerical inverse-kinematics comparison for the
-analytical baseline and proposed method. It uses Pepper URDF chain definitions
+analytical baseline and proposed constrained method. It uses Pepper URDF chain definitions
 and a calibrated MetrAbs workspace to convert detected wrist targets into robot
 joint angles.
 
@@ -108,7 +108,7 @@ solutions before collecting comparison data.
 
 ## 7. Output
 
-Like the proposed method, the IKPy server sends:
+Like the proposed constrained method, the IKPy server sends:
 
 - the shared pose and hand-orientation fields;
 - computed human/Pepper angle dictionaries; and
@@ -157,5 +157,5 @@ Inspect the outgoing `angles.pepper` dictionary and the validation logic in
 - [Shared runtime](../common/README.md)
 - [Client](../../client/README.md)
 - [Baseline](../baseline/README.md)
-- [Proposed method](../proposed/README.md)
+- [Proposed Constrained Method](../proposed/README.md)
 - [Tests](../tests/README.md)

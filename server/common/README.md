@@ -175,6 +175,6 @@ share this contract.
 - [Root setup and execution](../../README.md)
 - [Client](../../client/README.md)
 - [Baseline](../baseline/README.md)
-- [Proposed method](../proposed/README.md)
+- [Proposed Constrained Method](../proposed/README.md)
 - [IKPy](../ikpy/README.md)
 - [Tests](../tests/README.md)

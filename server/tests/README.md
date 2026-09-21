@@ -99,5 +99,5 @@ Test these areas manually before a live demonstration or data-collection run.
 - [Client](../../client/README.md)
 - [Shared runtime](../common/README.md)
 - [Baseline](../baseline/README.md)
-- [Proposed method](../proposed/README.md)
+- [Proposed Constrained Method](../proposed/README.md)
 - [IKPy](../ikpy/README.md)

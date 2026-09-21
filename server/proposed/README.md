@@ -1,6 +1,6 @@
-# Proposed Method
+# Proposed Constrained Method
 
-The proposed method extends the analytical motion-imitation pipeline with
+The proposed constrained method extends the analytical motion-imitation pipeline with
 server-side Pepper angle calculation, wrist-orientation information, pose
 feasibility checks, and stateful singularity handling.
 
@@ -41,7 +41,7 @@ offline evaluator uses the same maintained behavior for the constrained method.
 
 | File | Purpose |
 |---|---|
-| `run_motion_imitation_server.py` | Real-time proposed-method entry point |
+| `run_motion_imitation_server.py` | Real-time proposed-constrained-method entry point |
 | `pose_handling.py` | Applies singularity constraints and computes speeds |
 | `dual_singularity_fsm.py` | Stateful transitions into and out of dual singularities |
 | `angle_classifier_human.py` | Human reachability classification for arm-angle pairs |

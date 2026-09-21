@@ -196,5 +196,5 @@ the latest-only buffering is intentional.
 - [Root setup and execution](../README.md)
 - [Shared server and payload](../server/common/README.md)
 - [Baseline method](../server/baseline/README.md)
-- [Proposed method](../server/proposed/README.md)
+- [Proposed Constrained Method](../server/proposed/README.md)
 - [IKPy method](../server/ikpy/README.md)
