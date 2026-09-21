@@ -177,6 +177,10 @@ runtime configuration.
 
 ## 3. Execute the pipeline
 
+Before starting the server or client, double-click
+`client/1.naoqi-bin.exe - Shortcut.lnk` to launch the NAOqi binary required for
+Pepper communication. Keep it running during the pipeline.
+
 Use two terminals. Start exactly one server method before starting the client.
 
 ### 3.1 Terminal 1: start a server

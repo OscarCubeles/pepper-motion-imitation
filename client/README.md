@@ -107,6 +107,10 @@ The corresponding values and environment-variable overrides are documented in
 
 ## 4. Run the client
 
+Before starting the client, double-click
+`client/1.naoqi-bin.exe - Shortcut.lnk` to launch the NAOqi binary required for
+Pepper communication. Keep it running while the client is active.
+
 Start one server first, then run:
 
 ```powershell
