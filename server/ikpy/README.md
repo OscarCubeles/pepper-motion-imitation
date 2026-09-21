@@ -43,7 +43,7 @@ Pepper client. Move both wrists throughout the intended capture workspace. The
 tool continuously updates `server/ikpy/metrabs_workspace.json`; press `q` when
 the coverage is complete.
 
-The committed workspace file may be machine- and camera-specific. Recalibrate
+The committed workspace file may be machine and camera specific. Recalibrate
 it when the capture geometry changes substantially.
 
 ## 3. Run the streaming method
