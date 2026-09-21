@@ -26,7 +26,7 @@ from server.common import hand_orientation  # noqa: E402
 import server.common.kinematics.forward_kinematics as fk  # noqa: E402
 import server.common.kinematics.scaling_spherical as scaling  # noqa: E402
 import server.common.kinematics.transformation_matrices as tm  # noqa: E402
-from server.baseline.evaluation import original_solution_adapter as original_adapter  # noqa: E402
+from server.common.evaluation import original_solution_adapter as original_adapter  # noqa: E402
 from server.proposed.pose_handling import PoseHandler  # noqa: E402
 
 
@@ -1156,7 +1156,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=Path,
-        default=REPO_ROOT / "04-evaluation" / "results" / "ik_method_metrics.json",
+        default=REPO_ROOT / "dashboards" / "results" / "ik_method_metrics.json",
         help="Output JSON path.",
     )
     parser.add_argument(

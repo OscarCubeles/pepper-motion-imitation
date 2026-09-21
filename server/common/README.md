@@ -1,8 +1,8 @@
 # Shared Server Runtime
 
 `server/common` contains the pose-estimation, hand-tracking, transport,
-visualization, configuration, and shared kinematics code used by all three
-server methods.
+visualization, configuration, shared kinematics, and evaluation code used by
+all three server methods.
 
 ## 1. Architecture
 
@@ -34,6 +34,7 @@ Only one person is retained by the maintained runtime.
 | `visualizations.py` | Visualization worker and diagnostic panels |
 | `kinematics/` | Shared transforms, inverse/forward kinematics, and workspace fitting |
 | `metrabs_pytorch/` | Local PyTorch implementation of MetrAbs |
+| `evaluation/` | Dataset annotation and shared method-evaluation tools |
 
 ## 3. Runtime assets
 
@@ -157,7 +158,13 @@ Set `ENABLE_VISUALIZATION = False` for headless performance measurements.
 
 These choices prioritize low latency over processing every captured frame.
 
-## 9. Extending the shared runtime
+## 9. Evaluation tools
+
+Shared dataset annotation and method-comparison tools are documented in the
+[evaluation README](evaluation/README.md). Dashboard usage is documented in
+the [dashboards README](../../dashboards/README.md).
+
+## 10. Extending the shared runtime
 
 When changing the payload:
 
@@ -170,7 +177,7 @@ When changing the payload:
 Avoid changing joint order silently because every method and the Pepper client
 share this contract.
 
-## 10. Related documentation
+## 11. Related documentation
 
 - [Root setup and execution](../../README.md)
 - [Client](../../client/README.md)
@@ -178,3 +185,4 @@ share this contract.
 - [Proposed Constrained Method](../proposed/README.md)
 - [IKPy](../ikpy/README.md)
 - [Tests](../tests/README.md)
+- [Dashboards](../../dashboards/README.md)

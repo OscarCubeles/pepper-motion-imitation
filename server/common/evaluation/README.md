@@ -1,4 +1,4 @@
-# Evaluation Notes
+# Shared Evaluation Tools
 
 This folder contains the tools used to annotate the recorded dataset, compute annotation angles, evaluate IK methods, and inspect the results.
 
@@ -21,57 +21,17 @@ Typical files:
 
 Be careful with `annotations_filled.json`: it is the manual ground truth and should not be overwritten casually.
 
-## Streamlit Apps
+## Dashboards
 
-### Dataset Annotation App
-
-```powershell
-streamlit run 01-server\dl-pose\evaluation\dataset_annotation_app.py
-```
-
-Use this to inspect and edit video annotations. It loads `annotations_filled.json` if present, otherwise `annotations.json`, and saves edits to `annotations_filled.json`.
-
-Main views:
-
-- `Raw frame`
-- `Metrabs visualization`
-- `Corrected labels`
-- `All three`
-
-The right-side editor can show right/left arm angles and right/left arm coordinates. Angle display can be toggled between radians and degrees for clarity; stored JSON angle values remain as saved.
-
-### Evaluation Results App
-
-```powershell
-streamlit run 01-server\dl-pose\evaluation\evaluation_results_app.py
-```
-
-Use this to inspect:
-
-- per-video metric summaries
-- frame-level metric plots
-- per-frame method details
-- ground-truth comparisons for every method, including joint-angle deltas and WOM mismatch sources
-- method errors
-
-The sidebar has a result-type selector for:
-
-- `IK Metrics`
-- `Performance Metrics`
-
-By default it reads:
-
-```text
-04-evaluation/results/ik_method_metrics.json
-04-evaluation/results/performance_metrics.json
-```
+The interfaces for annotating datasets and inspecting evaluation results are
+documented in the [dashboards README](../../../dashboards/README.md).
 
 ## Main Scripts
 
 ### Run Metrabs On Dataset Frames
 
 ```powershell
-python 01-server\dl-pose\evaluation\annotate_metrabs_dataset.py dataset\pepper_singularity_motions
+python -m server.common.evaluation.annotate_metrabs_dataset dataset\pepper_singularity_motions
 ```
 
 This fills shoulder, elbow, wrist, and torso coordinates in `annotations_filled.json` and optionally writes `metrabs_visualizations/`.
@@ -86,7 +46,7 @@ Useful options:
 ### Record Synergy Reference Videos
 
 ```powershell
-python 01-server\dl-pose\evaluation\create_synergy_videos.py
+python -m server.common.evaluation.create_synergy_videos
 ```
 
 This records webcam clips into the same dataset structure, using the default category:
@@ -108,14 +68,14 @@ Useful options:
 After recording, process the synergy category like any other dataset:
 
 ```powershell
-python 01-server\dl-pose\evaluation\annotate_metrabs_dataset.py dataset\synergy_reference_motions
-python 01-server\dl-pose\evaluation\compute_annotation_joint_angles.py dataset\synergy_reference_motions
+python -m server.common.evaluation.annotate_metrabs_dataset dataset\synergy_reference_motions
+python -m server.common.evaluation.compute_annotation_joint_angles dataset\synergy_reference_motions
 ```
 
 ### Compute Annotation Joint Angles
 
 ```powershell
-python 01-server\dl-pose\evaluation\compute_annotation_joint_angles.py dataset\pepper_singularity_motions
+python -m server.common.evaluation.compute_annotation_joint_angles dataset\pepper_singularity_motions
 ```
 
 This computes:
@@ -139,13 +99,13 @@ If coordinates are changed later, rerun this script with `--overwrite`; angles a
 ### Evaluate IK Methods
 
 ```powershell
-python 01-server\dl-pose\evaluation\evaluate_ik_methods.py dataset\pepper_singularity_motions
+python -m server.common.evaluation.evaluate_ik_methods dataset\pepper_singularity_motions
 ```
 
 This writes:
 
 ```text
-04-evaluation/results/ik_method_metrics.json
+dashboards/results/ik_method_metrics.json
 ```
 
 The evaluator also fits the human synergy space used by the `SYN` metric from:
@@ -215,13 +175,13 @@ Current WOM logic:
 ### Evaluate Performance Metrics
 
 ```powershell
-python 01-server\dl-pose\evaluation\evaluate_performance_metrics.py dataset\pepper_singularity_motions
+python -m server.common.evaluation.evaluate_performance_metrics dataset\pepper_singularity_motions
 ```
 
 This writes a separate file:
 
 ```text
-04-evaluation/results/performance_metrics.json
+dashboards/results/performance_metrics.json
 ```
 
 The script replays `annotations_filled.json` frames offline and measures the Chapter 4 system-performance metrics:
@@ -245,7 +205,7 @@ Use `--max-video-index 5` to benchmark only `video_001` through `video_005` in e
 ### Schema Migration
 
 ```powershell
-python 01-server\dl-pose\evaluation\migrate_annotations_schema.py <dataset-or-video-folder>
+python -m server.common.evaluation.migrate_annotations_schema <dataset-or-video-folder>
 ```
 
 Use only if old annotation files need to be migrated to the current schema.

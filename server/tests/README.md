@@ -19,7 +19,7 @@ boundaries. They do not open hardware or command Pepper.
 
 ### 1.2 Evaluation tests
 
-Location: `server/baseline/evaluation/tests/`
+Location: `server/common/evaluation/tests/`
 
 | Test | Scope |
 |---|---|
@@ -43,7 +43,7 @@ Use the Python 3 `media` environment from the repository root:
 ```powershell
 conda activate media
 python -m unittest discover -s server/tests -p "test_*.py"
-python -m unittest discover -s server/baseline/evaluation/tests -p "test_*.py"
+python -m unittest discover -s server/common/evaluation/tests -p "test_*.py"
 ```
 
 The shared server tests import runtime modules, so the server dependencies must
@@ -87,7 +87,7 @@ Test these areas manually before a live demonstration or data-collection run.
 ## 6. Adding tests
 
 - Put shared runtime tests in `server/tests/`.
-- Put evaluation-specific tests in `server/baseline/evaluation/tests/`.
+- Put evaluation-specific tests in `server/common/evaluation/tests/`.
 - Put Python 2.7 client tests in `client/tests/`.
 - Mock camera, CUDA, network, and robot boundaries in automated tests.
 - Do not require physical Pepper hardware for a unit test.

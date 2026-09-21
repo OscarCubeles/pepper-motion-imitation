@@ -16,7 +16,7 @@ DL_POSE_DIR = CURRENT_FILE.parents[1]
 SERVER_DIR = CURRENT_FILE.parents[2]
 REPO_ROOT = CURRENT_FILE.parents[3]
 
-from server.baseline.evaluation import evaluate_ik_methods as ik_eval  # noqa: E402
+from server.common.evaluation import evaluate_ik_methods as ik_eval  # noqa: E402
 
 
 METHODS = ("current_solution_raw", "current_solution_constrained", "ikpy", "original_solution")
@@ -288,7 +288,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=Path,
-        default=REPO_ROOT / "04-evaluation" / "results" / "performance_metrics.json",
+        default=REPO_ROOT / "dashboards" / "results" / "performance_metrics.json",
         help="Output JSON path.",
     )
     parser.add_argument(

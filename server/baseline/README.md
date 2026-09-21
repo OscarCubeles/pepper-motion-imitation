@@ -33,7 +33,7 @@ The imitation client is audio-free.
 6. The client computes Pepper targets with its analytical kinematics path.
 7. The client smooths and dispatches the targets to Pepper.
 
-This separation is the main distinction from the proposed and IKPy streaming
+This separation is the main architecture distinction from the proposed and IKPy streaming
 methods, which include server-computed angles.
 
 ## 3. Entry point
@@ -83,49 +83,7 @@ Output is saved under `server/common/calibration_images/`.
 
 Use `run_motion_imitation_server.py` for the maintained baseline pipeline.
 
-## 6. Evaluation tools
-
-The `evaluation/` folder contains dataset annotation and offline comparison
-tools. Important commands include:
-
-```powershell
-# Add MetrAbs coordinates
-python -m server.baseline.evaluation.annotate_metrabs_dataset dataset/pepper_singularity_motions
-
-# Compute annotation angles
-python -m server.baseline.evaluation.compute_annotation_joint_angles dataset/pepper_singularity_motions
-
-# Generate the IK results consumed by the dashboard
-python -m server.baseline.evaluation.evaluate_ik_methods dataset --output dashboards/results/ik_method_metrics.json
-
-# Generate performance results consumed by the dashboard
-python -m server.baseline.evaluation.evaluate_performance_metrics dataset --output dashboards/results/performance_metrics.json
-```
-
-The IK evaluator compares ground truth, raw analytical output, constrained
-output, IKPy, and the retained original solution. It reports `EEAh`, `EEAr`,
-`SOAx`, `HJL`, `WOM`, `HJAr`, `TSE`, and `SYN`.
-
-The performance evaluator measures offline method computation. It does not
-include camera capture, MetrAbs inference, transport, or physical robot motion.
-
-### 6.1 Dashboards
-
-```powershell
-python -m pip install streamlit pandas altair
-
-streamlit run dashboards/annotation-dashboard/dataset_annotation_app.py
-streamlit run dashboards/streamlit-results-dashboard/evaluation_results_app.py
-```
-
-Current result files:
-
-```text
-dashboards/results/ik_method_metrics.json
-dashboards/results/performance_metrics.json
-```
-
-## 7. Expected payload
+## 6. Expected payload
 
 The baseline sends:
 
@@ -136,7 +94,7 @@ The baseline sends:
 It does not require a server-computed `angles` object. See the
 [shared runtime documentation](../common/README.md) for the 26-point layout.
 
-## 8. Troubleshooting
+## 7. Troubleshooting
 
 ### Calibration files are missing
 
@@ -158,7 +116,7 @@ Disable visualization in `server/common/settings.py`, close other GPU-heavy
 applications, and keep `NUM_AUG = 1` and `MAX_DETECTIONS = 1` unless measured
 experiments justify changing them.
 
-## 9. Related documentation
+## 8. Related documentation
 
 - [Root setup and execution](../../README.md)
 - [Shared runtime](../common/README.md)

@@ -10,8 +10,7 @@ The repository contains three motion-imitation methods:
   with client-side inverse kinematics.
 - **[Proposed Constrained Method](server/proposed/README.md):** server-side joint angles,
   wrist orientation, and singularity handling.
-- **[IKPy](server/ikpy/README.md):** numerical inverse-kinematics comparison
-  method.
+- **[IKPy](server/ikpy/README.md):** numerical inverse-kinematics method.
 
 ## Contents
 
@@ -207,12 +206,13 @@ from -15° to +15°.
 - [Client](client/README.md): NAOqi setup, payload handling, command shaping,
   configuration, and troubleshooting.
 - [Shared server code](server/common/README.md): MetrAbs, MediaPipe, payload,
-  WebSocket, visualization, settings, and shared assets.
+  WebSocket, visualization, evaluation, settings, and shared assets.
 - [Baseline](server/baseline/README.md): analytical baseline, calibration,
-  benchmarks, and evaluation tools.
+  and retained benchmark tools.
 - [Proposed Constrained Method](server/proposed/README.md): server-side angle calculation
   and singularity handling.
 - [IKPy](server/ikpy/README.md): IKPy chains, workspace calibration, runtime,
   and notebooks.
 - [Tests](server/tests/README.md): available suites, commands, and scope.
+- [Dashboards](dashboards/README.md): annotation and evaluation result apps.
 - [Server overview](server/README.md): server-package navigation.

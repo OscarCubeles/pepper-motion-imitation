@@ -5,9 +5,8 @@ The server is organized into one shared runtime and three method packages.
 ## Packages
 
 - [`common/`](common/README.md): MetrAbs, MediaPipe, transport, visualization,
-  settings, shared kinematics, and runtime assets.
-- [`baseline/`](baseline/README.md): pose-streaming analytical baseline and
-  evaluation tools.
+  settings, shared kinematics, evaluation tools, and runtime assets.
+- [`baseline/`](baseline/README.md): pose-streaming analytical baseline.
 - [`proposed/`](proposed/README.md): server-side analytical angles and
   singularity handling.
 - [`ikpy/`](ikpy/README.md): numerical IKPy method, Pepper chains, and workspace

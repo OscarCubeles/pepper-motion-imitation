@@ -5,7 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputPath = process.argv[2] || path.resolve(__dirname, "../../../04-evaluation/results/ik_method_metrics.json");
+const inputPath = process.argv[2] || path.resolve(__dirname, "../../../dashboards/results/ik_method_metrics.json");
 const outputPath = process.argv[3] || inputPath.replace(/\.json$/i, "_randomized.json");
 const seed = Number(process.argv[4] || 20260807);
 

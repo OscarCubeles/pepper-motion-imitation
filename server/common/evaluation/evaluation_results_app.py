@@ -9,8 +9,8 @@ import streamlit as st
 
 CURRENT_FILE = Path(__file__).resolve()
 REPO_ROOT = CURRENT_FILE.parents[3]
-DEFAULT_RESULTS_PATH = REPO_ROOT / "04-evaluation" / "results" / "ik_method_metrics.json"
-DEFAULT_PERFORMANCE_RESULTS_PATH = REPO_ROOT / "04-evaluation" / "results" / "performance_metrics.json"
+DEFAULT_RESULTS_PATH = REPO_ROOT / "dashboards" / "results" / "ik_method_metrics.json"
+DEFAULT_PERFORMANCE_RESULTS_PATH = REPO_ROOT / "dashboards" / "results" / "performance_metrics.json"
 METRIC_ORDER = ["EEAh", "EEAr", "SOAx", "HJL", "WOM", "HJAr", "TSE", "SYN"]
 ANGLE_ORDER = ["shoulder_pitch", "shoulder_roll", "elbow_yaw", "elbow_roll", "wrist_yaw"]
 GENERAL_IK_METRIC_ORDER = list(METRIC_ORDER)

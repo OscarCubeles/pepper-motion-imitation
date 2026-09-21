@@ -9,9 +9,9 @@ import torch
 
 CURRENT_FILE = Path(__file__).resolve()
 
-DL_POSE_DIR = CURRENT_FILE.parents[1]   # 01-server/dl-pose
-SERVER_DIR = CURRENT_FILE.parents[2]    # 01-server
-REPO_ROOT = CURRENT_FILE.parents[3]     # Pepper-Imitation-System
+COMMON_DIR = CURRENT_FILE.parents[1]
+SERVER_DIR = CURRENT_FILE.parents[2]
+REPO_ROOT = CURRENT_FILE.parents[3]
 
 from server.common import settings  # noqa: E402
 from server.common import pose_mapping as pose_map  # noqa: E402
