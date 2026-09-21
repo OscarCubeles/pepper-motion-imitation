@@ -1,0 +1,392 @@
+{
+    "video_id": "video_003",
+    "category": "pepper_singularity_motions",
+    "fps": 8,
+    "duration_seconds": 3,
+    "frames": [
+        {
+            "frame_id": 0,
+            "timestamp": 0.0,
+            "image_file": "frame_000.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 1,
+            "timestamp": 0.125,
+            "image_file": "frame_001.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 2,
+            "timestamp": 0.25,
+            "image_file": "frame_002.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 3,
+            "timestamp": 0.375,
+            "image_file": "frame_003.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 4,
+            "timestamp": 0.5,
+            "image_file": "frame_004.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 5,
+            "timestamp": 0.625,
+            "image_file": "frame_005.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 6,
+            "timestamp": 0.75,
+            "image_file": "frame_006.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 7,
+            "timestamp": 0.875,
+            "image_file": "frame_007.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 8,
+            "timestamp": 1.0,
+            "image_file": "frame_008.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 9,
+            "timestamp": 1.125,
+            "image_file": "frame_009.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 10,
+            "timestamp": 1.25,
+            "image_file": "frame_010.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 11,
+            "timestamp": 1.375,
+            "image_file": "frame_011.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 12,
+            "timestamp": 1.5,
+            "image_file": "frame_012.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 13,
+            "timestamp": 1.625,
+            "image_file": "frame_013.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 14,
+            "timestamp": 1.75,
+            "image_file": "frame_014.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 15,
+            "timestamp": 1.875,
+            "image_file": "frame_015.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 16,
+            "timestamp": 2.0,
+            "image_file": "frame_016.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 17,
+            "timestamp": 2.125,
+            "image_file": "frame_017.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 18,
+            "timestamp": 2.25,
+            "image_file": "frame_018.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 19,
+            "timestamp": 2.375,
+            "image_file": "frame_019.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 20,
+            "timestamp": 2.5,
+            "image_file": "frame_020.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 21,
+            "timestamp": 2.625,
+            "image_file": "frame_021.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 22,
+            "timestamp": 2.75,
+            "image_file": "frame_022.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        },
+        {
+            "frame_id": 23,
+            "timestamp": 2.875,
+            "image_file": "frame_023.jpg",
+            "shoulder": null,
+            "elbow": null,
+            "wrist": null,
+            "joint_angles": {
+                "shoulder_pitch": null,
+                "shoulder_roll": null,
+                "elbow_yaw": null,
+                "elbow_roll": null
+            },
+            "wrist_orientation_left": null,
+            "wrist_orientation_right": null
+        }
+    ]
+}

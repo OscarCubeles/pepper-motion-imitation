@@ -1,0 +1,1424 @@
+{
+    "video_id": "video_006",
+    "category": "celebration_movements",
+    "fps": 8,
+    "duration_seconds": 3,
+    "frames": [
+        {
+            "frame_id": 0,
+            "timestamp": 0.0,
+            "image_file": "frame_000.jpg",
+            "torso": [
+                105.01587677001953,
+                239.64271545410156,
+                1502.799072265625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    302.8438415527344,
+                    118.20341491699219,
+                    1541.7127685546875
+                ],
+                "elbow": [
+                    361.97393798828125,
+                    338.44384765625,
+                    1486.5654296875
+                ],
+                "wrist": [
+                    358.0917663574219,
+                    529.20361328125,
+                    1351.6480712890625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -80.86885833740234,
+                    113.8789291381836,
+                    1573.35791015625
+                ],
+                "elbow": [
+                    -154.10975646972656,
+                    338.3946533203125,
+                    1541.9501953125
+                ],
+                "wrist": [
+                    -166.75833129882812,
+                    528.0986328125,
+                    1407.6895751953125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_000_metrabs.jpg"
+        },
+        {
+            "frame_id": 1,
+            "timestamp": 0.125,
+            "image_file": "frame_001.jpg",
+            "torso": [
+                105.24845886230469,
+                241.18350219726562,
+                1514.81298828125
+            ],
+            "left_arm": {
+                "shoulder": [
+                    306.22918701171875,
+                    118.75255584716797,
+                    1552.236572265625
+                ],
+                "elbow": [
+                    365.08721923828125,
+                    341.6290283203125,
+                    1497.708251953125
+                ],
+                "wrist": [
+                    359.495849609375,
+                    533.6754150390625,
+                    1360.346923828125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -81.90766143798828,
+                    114.71613311767578,
+                    1588.727294921875
+                ],
+                "elbow": [
+                    -156.46951293945312,
+                    341.91278076171875,
+                    1558.1156005859375
+                ],
+                "wrist": [
+                    -170.15304565429688,
+                    534.0029296875,
+                    1422.2252197265625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_001_metrabs.jpg"
+        },
+        {
+            "frame_id": 2,
+            "timestamp": 0.25,
+            "image_file": "frame_002.jpg",
+            "torso": [
+                105.64630126953125,
+                242.7490234375,
+                1523.6085205078125
+            ],
+            "left_arm": {
+                "shoulder": [
+                    307.4430236816406,
+                    120.41368103027344,
+                    1562.36962890625
+                ],
+                "elbow": [
+                    364.0203552246094,
+                    342.38177490234375,
+                    1500.4266357421875
+                ],
+                "wrist": [
+                    358.5447998046875,
+                    534.9246215820312,
+                    1361.8885498046875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -83.07504272460938,
+                    115.87076568603516,
+                    1597.502685546875
+                ],
+                "elbow": [
+                    -157.26596069335938,
+                    342.9154357910156,
+                    1561.7794189453125
+                ],
+                "wrist": [
+                    -170.19454956054688,
+                    535.6456909179688,
+                    1424.83154296875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_002_metrabs.jpg"
+        },
+        {
+            "frame_id": 3,
+            "timestamp": 0.375,
+            "image_file": "frame_003.jpg",
+            "torso": [
+                102.65782165527344,
+                238.78549194335938,
+                1498.5989990234375
+            ],
+            "left_arm": {
+                "shoulder": [
+                    300.153076171875,
+                    118.46821594238281,
+                    1539.3955078125
+                ],
+                "elbow": [
+                    356.6479187011719,
+                    338.2356872558594,
+                    1479.890869140625
+                ],
+                "wrist": [
+                    350.1351013183594,
+                    527.2894287109375,
+                    1341.768798828125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -81.67503356933594,
+                    113.28560638427734,
+                    1570.8629150390625
+                ],
+                "elbow": [
+                    -153.44760131835938,
+                    337.7120056152344,
+                    1535.937255859375
+                ],
+                "wrist": [
+                    -165.98899841308594,
+                    528.5841674804688,
+                    1403.5252685546875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_003_metrabs.jpg"
+        },
+        {
+            "frame_id": 4,
+            "timestamp": 0.5,
+            "image_file": "frame_004.jpg",
+            "torso": [
+                101.4031982421875,
+                239.1454315185547,
+                1495.4920654296875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    296.84417724609375,
+                    116.70436096191406,
+                    1534.916015625
+                ],
+                "elbow": [
+                    355.00323486328125,
+                    337.4763488769531,
+                    1478.4539794921875
+                ],
+                "wrist": [
+                    347.9060974121094,
+                    526.1915283203125,
+                    1341.9739990234375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -82.19404602050781,
+                    114.62813568115234,
+                    1568.1680908203125
+                ],
+                "elbow": [
+                    -153.26504516601562,
+                    340.46856689453125,
+                    1534.0418701171875
+                ],
+                "wrist": [
+                    -162.92555236816406,
+                    529.7509765625,
+                    1399.802734375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_004_metrabs.jpg"
+        },
+        {
+            "frame_id": 5,
+            "timestamp": 0.625,
+            "image_file": "frame_005.jpg",
+            "torso": [
+                103.1669692993164,
+                243.9253692626953,
+                1524.8651123046875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    303.04522705078125,
+                    118.77027893066406,
+                    1563.81103515625
+                ],
+                "elbow": [
+                    362.66278076171875,
+                    344.3277282714844,
+                    1509.0260009765625
+                ],
+                "wrist": [
+                    354.153076171875,
+                    535.7117309570312,
+                    1370.1480712890625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -85.25972747802734,
+                    117.45368957519531,
+                    1596.570068359375
+                ],
+                "elbow": [
+                    -159.3956298828125,
+                    347.5111999511719,
+                    1565.5135498046875
+                ],
+                "wrist": [
+                    -164.95489501953125,
+                    540.1326904296875,
+                    1427.532470703125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_005_metrabs.jpg"
+        },
+        {
+            "frame_id": 6,
+            "timestamp": 0.75,
+            "image_file": "frame_006.jpg",
+            "torso": [
+                100.10980987548828,
+                229.30393981933594,
+                1493.8475341796875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    287.8038024902344,
+                    103.7625503540039,
+                    1538.6702880859375
+                ],
+                "elbow": [
+                    376.94805908203125,
+                    312.8308410644531,
+                    1563.9073486328125
+                ],
+                "wrist": [
+                    334.5614013671875,
+                    283.5037536621094,
+                    1347.4403076171875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -78.35869598388672,
+                    95.14668273925781,
+                    1557.342529296875
+                ],
+                "elbow": [
+                    -197.93507385253906,
+                    281.7041320800781,
+                    1610.6915283203125
+                ],
+                "wrist": [
+                    -126.83767700195312,
+                    290.7968444824219,
+                    1395.7142333984375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_006_metrabs.jpg"
+        },
+        {
+            "frame_id": 7,
+            "timestamp": 0.875,
+            "image_file": "frame_007.jpg",
+            "torso": [
+                95.42430114746094,
+                227.76217651367188,
+                1481.3017578125
+            ],
+            "left_arm": {
+                "shoulder": [
+                    284.72607421875,
+                    91.44525146484375,
+                    1524.8531494140625
+                ],
+                "elbow": [
+                    443.60113525390625,
+                    220.48036193847656,
+                    1433.6241455078125
+                ],
+                "wrist": [
+                    348.2829895019531,
+                    49.76675796508789,
+                    1289.36962890625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -82.73554992675781,
+                    77.22356414794922,
+                    1535.343994140625
+                ],
+                "elbow": [
+                    -262.6258239746094,
+                    183.61782836914062,
+                    1459.9000244140625
+                ],
+                "wrist": [
+                    -147.58673095703125,
+                    36.36504364013672,
+                    1295.6734619140625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_007_metrabs.jpg"
+        },
+        {
+            "frame_id": 8,
+            "timestamp": 1.0,
+            "image_file": "frame_008.jpg",
+            "torso": [
+                101.53321838378906,
+                205.73837280273438,
+                1473.80615234375
+            ],
+            "left_arm": {
+                "shoulder": [
+                    275.64129638671875,
+                    35.936710357666016,
+                    1523.097900390625
+                ],
+                "elbow": [
+                    466.9501647949219,
+                    -57.276771545410156,
+                    1455.868896484375
+                ],
+                "wrist": [
+                    368.3247375488281,
+                    -243.21507263183594,
+                    1370.3363037109375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -67.1654281616211,
+                    21.80810546875,
+                    1531.54833984375
+                ],
+                "elbow": [
+                    -258.00653076171875,
+                    -83.69436645507812,
+                    1467.9598388671875
+                ],
+                "wrist": [
+                    -157.16952514648438,
+                    -266.3084411621094,
+                    1359.2275390625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_008_metrabs.jpg"
+        },
+        {
+            "frame_id": 9,
+            "timestamp": 1.125,
+            "image_file": "frame_009.jpg",
+            "torso": [
+                96.29576873779297,
+                181.98326110839844,
+                1494.9871826171875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    240.43592834472656,
+                    0.16306976974010468,
+                    1542.9320068359375
+                ],
+                "elbow": [
+                    334.46893310546875,
+                    -208.86924743652344,
+                    1472.2183837890625
+                ],
+                "wrist": [
+                    406.8392639160156,
+                    -401.0970764160156,
+                    1388.42626953125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -40.83312225341797,
+                    -11.653145790100098,
+                    1547.3189697265625
+                ],
+                "elbow": [
+                    -132.18601989746094,
+                    -215.79066467285156,
+                    1459.4371337890625
+                ],
+                "wrist": [
+                    -189.9481201171875,
+                    -412.9263000488281,
+                    1370.71484375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_009_metrabs.jpg"
+        },
+        {
+            "frame_id": 10,
+            "timestamp": 1.25,
+            "image_file": "frame_010.jpg",
+            "torso": [
+                96.42627716064453,
+                192.1122283935547,
+                1505.434326171875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    243.46987915039062,
+                    7.52283239364624,
+                    1549.9918212890625
+                ],
+                "elbow": [
+                    331.8352966308594,
+                    -214.373046875,
+                    1510.8795166015625
+                ],
+                "wrist": [
+                    390.0265808105469,
+                    -427.3346252441406,
+                    1463.9559326171875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -37.9619255065918,
+                    -4.95001220703125,
+                    1568.617431640625
+                ],
+                "elbow": [
+                    -131.48570251464844,
+                    -224.94302368164062,
+                    1522.33154296875
+                ],
+                "wrist": [
+                    -175.87539672851562,
+                    -436.98846435546875,
+                    1463.9273681640625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_010_metrabs.jpg"
+        },
+        {
+            "frame_id": 11,
+            "timestamp": 1.375,
+            "image_file": "frame_011.jpg",
+            "torso": [
+                97.52713012695312,
+                192.98817443847656,
+                1505.5247802734375
+            ],
+            "left_arm": {
+                "shoulder": [
+                    247.15579223632812,
+                    13.60092544555664,
+                    1553.1435546875
+                ],
+                "elbow": [
+                    339.80133056640625,
+                    -208.24850463867188,
+                    1516.0789794921875
+                ],
+                "wrist": [
+                    400.62786865234375,
+                    -416.812255859375,
+                    1466.0677490234375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -40.25667953491211,
+                    -1.4359396696090698,
+                    1565.5877685546875
+                ],
+                "elbow": [
+                    -138.52793884277344,
+                    -215.74273681640625,
+                    1509.3310546875
+                ],
+                "wrist": [
+                    -190.1651611328125,
+                    -421.282958984375,
+                    1436.0181884765625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_011_metrabs.jpg"
+        },
+        {
+            "frame_id": 12,
+            "timestamp": 1.5,
+            "image_file": "frame_012.jpg",
+            "torso": [
+                94.71654510498047,
+                188.4365692138672,
+                1484.1802978515625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    247.77479553222656,
+                    15.145524978637695,
+                    1531.3831787109375
+                ],
+                "elbow": [
+                    363.302490234375,
+                    -193.81826782226562,
+                    1500.85986328125
+                ],
+                "wrist": [
+                    412.43206787109375,
+                    -402.1140441894531,
+                    1447.55712890625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -41.70737075805664,
+                    -3.331939220428467,
+                    1546.6497802734375
+                ],
+                "elbow": [
+                    -156.59182739257812,
+                    -203.04872131347656,
+                    1498.1856689453125
+                ],
+                "wrist": [
+                    -191.2584686279297,
+                    -417.9791259765625,
+                    1435.7540283203125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_012_metrabs.jpg"
+        },
+        {
+            "frame_id": 13,
+            "timestamp": 1.625,
+            "image_file": "frame_013.jpg",
+            "torso": [
+                93.1407470703125,
+                197.44358825683594,
+                1487.5367431640625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    267.48114013671875,
+                    28.112510681152344,
+                    1544.9803466796875
+                ],
+                "elbow": [
+                    473.22906494140625,
+                    -77.51402282714844,
+                    1521.9097900390625
+                ],
+                "wrist": [
+                    362.6357421875,
+                    -293.83795166015625,
+                    1492.286865234375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -69.92079162597656,
+                    18.089082717895508,
+                    1551.9013671875
+                ],
+                "elbow": [
+                    -263.1294860839844,
+                    -85.73077392578125,
+                    1491.6129150390625
+                ],
+                "wrist": [
+                    -113.89595794677734,
+                    -276.5654602050781,
+                    1445.4122314453125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_013_metrabs.jpg"
+        },
+        {
+            "frame_id": 14,
+            "timestamp": 1.75,
+            "image_file": "frame_014.jpg",
+            "torso": [
+                90.61603546142578,
+                213.4112548828125,
+                1508.37744140625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    277.3953857421875,
+                    52.05368423461914,
+                    1552.540283203125
+                ],
+                "elbow": [
+                    482.55389404296875,
+                    26.593496322631836,
+                    1441.06640625
+                ],
+                "wrist": [
+                    307.1635437011719,
+                    -126.76451873779297,
+                    1492.76025390625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -79.551025390625,
+                    37.96263885498047,
+                    1575.3990478515625
+                ],
+                "elbow": [
+                    -303.70086669921875,
+                    0.8988145589828491,
+                    1511.336181640625
+                ],
+                "wrist": [
+                    -88.54609680175781,
+                    -128.52401733398438,
+                    1499.0767822265625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_014_metrabs.jpg"
+        },
+        {
+            "frame_id": 15,
+            "timestamp": 1.875,
+            "image_file": "frame_015.jpg",
+            "torso": [
+                89.2218017578125,
+                211.06224060058594,
+                1510.2762451171875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    275.5357971191406,
+                    51.226097106933594,
+                    1563.726318359375
+                ],
+                "elbow": [
+                    480.1741027832031,
+                    15.761347770690918,
+                    1460.0009765625
+                ],
+                "wrist": [
+                    324.1219177246094,
+                    -160.4163818359375,
+                    1492.640380859375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -80.2756118774414,
+                    30.960094451904297,
+                    1575.0518798828125
+                ],
+                "elbow": [
+                    -287.150390625,
+                    -26.779390335083008,
+                    1495.099365234375
+                ],
+                "wrist": [
+                    -117.48751831054688,
+                    -194.18890380859375,
+                    1479.342041015625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_015_metrabs.jpg"
+        },
+        {
+            "frame_id": 16,
+            "timestamp": 2.0,
+            "image_file": "frame_016.jpg",
+            "torso": [
+                88.15992736816406,
+                191.6980438232422,
+                1464.9119873046875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    254.2884979248047,
+                    30.01786994934082,
+                    1523.1134033203125
+                ],
+                "elbow": [
+                    432.2063903808594,
+                    -110.0242919921875,
+                    1474.7471923828125
+                ],
+                "wrist": [
+                    412.4270324707031,
+                    -321.6580810546875,
+                    1400.928955078125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -67.6162338256836,
+                    6.558094024658203,
+                    1526.040283203125
+                ],
+                "elbow": [
+                    -220.14010620117188,
+                    -153.61532592773438,
+                    1463.2686767578125
+                ],
+                "wrist": [
+                    -217.8510284423828,
+                    -357.06561279296875,
+                    1369.1627197265625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_016_metrabs.jpg"
+        },
+        {
+            "frame_id": 17,
+            "timestamp": 2.125,
+            "image_file": "frame_017.jpg",
+            "torso": [
+                85.3425064086914,
+                183.68374633789062,
+                1467.8223876953125
+            ],
+            "left_arm": {
+                "shoulder": [
+                    240.48165893554688,
+                    14.39086627960205,
+                    1526.26904296875
+                ],
+                "elbow": [
+                    394.797607421875,
+                    -172.47206115722656,
+                    1512.7205810546875
+                ],
+                "wrist": [
+                    509.0732727050781,
+                    -362.8894348144531,
+                    1458.4075927734375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -58.96104049682617,
+                    -3.8227574825286865,
+                    1526.273681640625
+                ],
+                "elbow": [
+                    -196.45004272460938,
+                    -193.3463897705078,
+                    1495.6942138671875
+                ],
+                "wrist": [
+                    -262.5300598144531,
+                    -400.9599914550781,
+                    1444.7777099609375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_017_metrabs.jpg"
+        },
+        {
+            "frame_id": 18,
+            "timestamp": 2.25,
+            "image_file": "frame_018.jpg",
+            "torso": [
+                88.5833969116211,
+                184.5575714111328,
+                1468.6220703125
+            ],
+            "left_arm": {
+                "shoulder": [
+                    246.39022827148438,
+                    15.760950088500977,
+                    1520.56396484375
+                ],
+                "elbow": [
+                    391.835205078125,
+                    -175.9534454345703,
+                    1495.167724609375
+                ],
+                "wrist": [
+                    496.7692565917969,
+                    -371.0512390136719,
+                    1453.933349609375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -53.853023529052734,
+                    -3.7997663021087646,
+                    1535.2913818359375
+                ],
+                "elbow": [
+                    -192.03758239746094,
+                    -194.14895629882812,
+                    1504.07568359375
+                ],
+                "wrist": [
+                    -275.8979797363281,
+                    -395.0253601074219,
+                    1453.906982421875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_018_metrabs.jpg"
+        },
+        {
+            "frame_id": 19,
+            "timestamp": 2.375,
+            "image_file": "frame_019.jpg",
+            "torso": [
+                89.85059356689453,
+                187.84437561035156,
+                1472.5784912109375
+            ],
+            "left_arm": {
+                "shoulder": [
+                    248.3270721435547,
+                    15.557920455932617,
+                    1523.7418212890625
+                ],
+                "elbow": [
+                    394.2972412109375,
+                    -169.0756378173828,
+                    1483.86181640625
+                ],
+                "wrist": [
+                    488.1417236328125,
+                    -360.41748046875,
+                    1422.4473876953125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -56.07709884643555,
+                    -1.1248695850372314,
+                    1535.1275634765625
+                ],
+                "elbow": [
+                    -195.8834991455078,
+                    -182.36415100097656,
+                    1483.207275390625
+                ],
+                "wrist": [
+                    -272.7785949707031,
+                    -379.9811096191406,
+                    1414.9339599609375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_019_metrabs.jpg"
+        },
+        {
+            "frame_id": 20,
+            "timestamp": 2.5,
+            "image_file": "frame_020.jpg",
+            "torso": [
+                89.17192077636719,
+                192.5283203125,
+                1473.345947265625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    256.3468322753906,
+                    24.675180435180664,
+                    1527.415771484375
+                ],
+                "elbow": [
+                    439.4595642089844,
+                    -112.77326202392578,
+                    1485.74755859375
+                ],
+                "wrist": [
+                    456.335205078125,
+                    -331.544677734375,
+                    1409.6048583984375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -67.5027847290039,
+                    12.717963218688965,
+                    1540.59423828125
+                ],
+                "elbow": [
+                    -244.15762329101562,
+                    -122.90601348876953,
+                    1491.9329833984375
+                ],
+                "wrist": [
+                    -244.95376586914062,
+                    -347.1308288574219,
+                    1417.4405517578125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_020_metrabs.jpg"
+        },
+        {
+            "frame_id": 21,
+            "timestamp": 2.625,
+            "image_file": "frame_021.jpg",
+            "torso": [
+                89.21955108642578,
+                203.5585174560547,
+                1488.2427978515625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    271.0076599121094,
+                    36.20773696899414,
+                    1549.240966796875
+                ],
+                "elbow": [
+                    493.6432800292969,
+                    -18.479351043701172,
+                    1515.6854248046875
+                ],
+                "wrist": [
+                    367.5304260253906,
+                    -225.66574096679688,
+                    1487.2049560546875
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -83.13399505615234,
+                    32.27421188354492,
+                    1554.405029296875
+                ],
+                "elbow": [
+                    -294.50140380859375,
+                    -27.848527908325195,
+                    1487.64013671875
+                ],
+                "wrist": [
+                    -135.202392578125,
+                    -215.67176818847656,
+                    1463.086181640625
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_021_metrabs.jpg"
+        },
+        {
+            "frame_id": 22,
+            "timestamp": 2.75,
+            "image_file": "frame_022.jpg",
+            "torso": [
+                87.90755462646484,
+                208.7674560546875,
+                1493.2545166015625
+            ],
+            "left_arm": {
+                "shoulder": [
+                    271.2760925292969,
+                    47.60601043701172,
+                    1542.584228515625
+                ],
+                "elbow": [
+                    481.6029968261719,
+                    22.332292556762695,
+                    1447.0299072265625
+                ],
+                "wrist": [
+                    301.6231384277344,
+                    -119.13652801513672,
+                    1495.359130859375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -85.0856704711914,
+                    41.30302810668945,
+                    1561.0079345703125
+                ],
+                "elbow": [
+                    -310.4457092285156,
+                    4.736196517944336,
+                    1509.04541015625
+                ],
+                "wrist": [
+                    -96.35651397705078,
+                    -124.750732421875,
+                    1499.9925537109375
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_022_metrabs.jpg"
+        },
+        {
+            "frame_id": 23,
+            "timestamp": 2.875,
+            "image_file": "frame_023.jpg",
+            "torso": [
+                85.42054748535156,
+                208.68212890625,
+                1495.1278076171875
+            ],
+            "left_arm": {
+                "shoulder": [
+                    271.7319030761719,
+                    48.05836486816406,
+                    1546.339599609375
+                ],
+                "elbow": [
+                    479.0539855957031,
+                    23.078344345092773,
+                    1445.491455078125
+                ],
+                "wrist": [
+                    311.5660400390625,
+                    -137.6201629638672,
+                    1477.563720703125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "right_arm": {
+                "shoulder": [
+                    -85.96659088134766,
+                    36.63542938232422,
+                    1567.1575927734375
+                ],
+                "elbow": [
+                    -310.26202392578125,
+                    -7.368880271911621,
+                    1512.1556396484375
+                ],
+                "wrist": [
+                    -98.95113372802734,
+                    -146.0735321044922,
+                    1496.009033203125
+                ],
+                "joint_angles": {
+                    "shoulder_pitch": null,
+                    "shoulder_roll": null,
+                    "elbow_yaw": null,
+                    "elbow_roll": null
+                },
+                "wrist_orientation": null
+            },
+            "metrabs_visualization": "metrabs_visualizations/frame_023_metrabs.jpg"
+        }
+    ]
+}

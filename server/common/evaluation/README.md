@@ -28,6 +28,23 @@ documented in the [dashboards README](../../../dashboards/README.md).
 
 ## Main Scripts
 
+### Blur Faces in Dataset Frames
+
+```powershell
+python -m server.common.evaluation.blur_dataset_faces
+```
+
+This copies `dataset/` to `processed_data/`, preserving the folder structure
+and annotation files while blurring detected frontal faces in every `frames/`
+folder. Unblurred `.mp4` videos are skipped, and the original dataset is not
+modified.
+
+To remove `.mp4` files from an existing `processed_data/` folder:
+
+```powershell
+python -m server.common.evaluation.remove_processed_videos
+```
+
 ### Run Metrabs On Dataset Frames
 
 ```powershell
