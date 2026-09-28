@@ -1,8 +1,17 @@
 # Pepper Motion Imitation
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0097A7?style=for-the-badge&logo=google&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+
 Real-time upper-body motion imitation for the SoftBank Pepper robot. A Python
 3 server estimates a person's pose with MetrAbs and MediaPipe, then a Python
-2.7 NAOqi client sends the resulting joint targets to Pepper.
+2.7 NAOqi client sends the resulting joint targets to Pepper. The thesis
+document is available in [Thesis.pdf](Thesis.pdf).
 
 The repository contains three motion-imitation methods:
 

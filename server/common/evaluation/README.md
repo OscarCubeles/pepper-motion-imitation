@@ -39,11 +39,47 @@ and annotation files while blurring detected frontal faces in every `frames/`
 folder. Unblurred `.mp4` videos are skipped, and the original dataset is not
 modified.
 
+To keep both the original and blurred frames inside each synergy reference
+video folder, run:
+
+```powershell
+python -m server.common.evaluation.blur_synergy_reference_frames
+```
+
+This produces the following layout without changing the original images:
+
+```text
+dataset/synergy_reference_motions/video_0XX/
+|-- frames/
+`-- frames_blurred/
+```
+
+An alternative category path or one `video_XXX` folder can be supplied as the
+optional positional argument. For example, to process only `video_041`:
+
+```powershell
+python -m server.common.evaluation.blur_synergy_reference_frames dataset\synergy_reference_motions\video_041
+```
+
+If images are directly inside the video folder, the command first copies them
+into `frames/`, then creates their face-blurred copies in `frames_blurred/`.
+
 To remove `.mp4` files from an existing `processed_data/` folder:
 
 ```powershell
 python -m server.common.evaluation.remove_processed_videos
 ```
+
+To blur the generated Metrabs visualization images for every video while
+leaving the originals untouched:
+
+```powershell
+python -m server.common.evaluation.blur_metrabs_visualizations
+```
+
+For each `metrabs_visualizations/` folder, this creates a sibling
+`metrabs_visualizations_blurred/` folder. You can optionally pass a dataset
+category or other subtree as the source argument.
 
 ### Run Metrabs On Dataset Frames
 
