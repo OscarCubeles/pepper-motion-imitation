@@ -25,13 +25,17 @@ The repository contains three motion-imitation methods:
 
 ## Contents
 
-#### [1. Methods and demo videos](#1-methods-and-demo-videos)
+#### [1. Methods and demo videos](#methods-and-demo-videos)
 
-#### [2. Setup](#2-setup)
+#### [Dashboards](#dashboards)
 
-#### [3. Execute the pipeline](#3-execute-the-pipeline)
+#### [2. Setup](#setup)
 
-#### [4. Detailed documentation](#4-detailed-documentation)
+#### [3. Execute the pipeline](#execute-the-pipeline)
+
+#### [4. Detailed documentation](#detailed-documentation)
+
+<a id="methods-and-demo-videos"></a>
 
 ## 1. Methods and demo videos
 
@@ -61,6 +65,8 @@ Uses IKPy as a numerical inverse-kinematics comparison method.
 
 
 
+<a id="dashboards"></a>
+
 ## Dashboards
 
 The repository includes a dataset annotation dashboard and an evaluation
@@ -71,6 +77,8 @@ documentation.
 | --- | --- |
 | [![Dataset annotation dashboard](dashboards/results/dataset_annotation_dashboard.png)](dashboards/README.md#dataset-annotation-dashboard) | [![Evaluation results dashboard](dashboards/results/evaluation_dashboard.png)](dashboards/README.md#evaluation-results-dashboard) |
 
+
+<a id="setup"></a>
 
 ## 2. Setup
 
@@ -185,6 +193,8 @@ PEPPER_MODE = "sim"     # 127.0.0.1
 See the [client documentation](client/README.md) for the detailed SDK and
 runtime configuration.
 
+<a id="execute-the-pipeline"></a>
+
 ## 3. Execute the pipeline
 
 Before starting the server or client, double-click
@@ -218,6 +228,8 @@ address and client host are changed.
 Press `q` to stop the visualization/client, or use `Ctrl+C` in a headless
 server. All three imitation methods are silent and do not send audio to Pepper.
 
+
+<a id="detailed-documentation"></a>
 
 ## 4. Detailed documentation
 
