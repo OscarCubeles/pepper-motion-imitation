@@ -40,11 +40,8 @@ The repository contains three motion-imitation methods:
 Implements the analytical human-to-Pepper imitation approach. The server sends
 the detected pose, and the client computes Pepper joint targets.
 
-- [Baseline documentation](server/baseline/README.md)
 
-<video src="dashboards/results/baseline_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+[![Proposed baseline demo](dashboards/results/baseline_example.png)](dashboards/results/baseline_demo.mp4)
 
 
 ### 1.2 [Proposed Constrained Method](server/proposed/README.md)
@@ -52,22 +49,27 @@ the detected pose, and the client computes Pepper joint targets.
 Computes Pepper angles on the server and applies the thesis method's wrist
 orientation and singularity-handling logic.
 
-- [Proposed Constrained Method documentation](server/proposed/README.md)
 
-<video src="dashboards/results/proposed_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+[![Proposed Constrained Method demo](dashboards/results/proposed_example.png)](dashboards/results/proposed_demo.mp4)
 
 
 ### 1.3 [IKPy](server/ikpy/README.md)
 
 Uses IKPy as a numerical inverse-kinematics comparison method.
 
-- [IKPy documentation](server/ikpy/README.md)
+[![Proposed IKPy demo](dashboards/results/ikpy_example.png)](dashboards/results/ikpy_demo.mp4)
 
-<video src="dashboards/results/ikpy_demo.mp4" controls width="720">
-  Your browser does not support embedded video.
-</video>
+
+
+## Dashboards
+
+The repository includes a dataset annotation dashboard and an evaluation
+results dashboard. Click an image to open the corresponding dashboard
+documentation.
+
+| Dataset annotation | Evaluation results |
+| --- | --- |
+| [![Dataset annotation dashboard](dashboards/results/dataset_annotation_dashboard.png)](dashboards/README.md#dataset-annotation-dashboard) | [![Evaluation results dashboard](dashboards/results/evaluation_dashboard.png)](dashboards/README.md#evaluation-results-dashboard) |
 
 
 ## 2. Setup
@@ -163,8 +165,10 @@ conda install python=2.7
 pip install numpy websocket-client keyboard
 ```
 
-Install the 32-bit NAOqi Python SDK 2.5.5 and make its `lib` directory
-importable from the `pepper` environment. Verify it with:
+Download the 32-bit NAOqi Python SDK 2.5.5 from the
+[NAOqi SDK download](https://drive.google.com/file/d/1X7MXJbRihu_tOzR3D7qeYpLC1brGUX93/view?usp=sharing),
+then make its `lib` directory importable from the `pepper` environment. Verify
+it with:
 
 ```powershell
 python -c "import platform; print(platform.architecture())"
@@ -182,6 +186,10 @@ See the [client documentation](client/README.md) for the detailed SDK and
 runtime configuration.
 
 ## 3. Execute the pipeline
+
+Before starting the server or client, double-click
+`client/1.naoqi-bin.exe - Shortcut.lnk` to launch the NAOqi binary required for
+Pepper communication. Keep it running during the pipeline.
 
 Use two terminals. Start exactly one server method before starting the client.
 
@@ -209,8 +217,7 @@ address and client host are changed.
 
 Press `q` to stop the visualization/client, or use `Ctrl+C` in a headless
 server. All three imitation methods are silent and do not send audio to Pepper.
-The shared client also limits every `HipRoll` command to the inclusive range
-from -15° to +15°.
+
 
 ## 4. Detailed documentation
 
